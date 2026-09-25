@@ -124,6 +124,8 @@ export const bonuses: Bonus[] = [
 export type Testimonial = {
   quote: string;
   author: string;
+  photo: string;
+  photoAlt: string;
 };
 
 // ⚠️ Depoimentos de exemplo — troque pelos depoimentos reais dos seus
@@ -133,16 +135,22 @@ export const testimonials: Testimonial[] = [
     quote:
       "Já tentei vários planners e nenhum durava mais de uma semana comigo. Esse é diferente: não me sinto culpada quando pulo um dia, e o espaço de despejo de ideias salvou minha rotina.",
     author: "Camila R.",
+    photo: "/images/testimonials/camila.webp",
+    photoAlt: "Camila R.",
   },
   {
     quote:
       "O fato de não ter data fixa mudou tudo. Eu começo quando quero, no meu ritmo, e sinto que o planner finalmente trabalha comigo — não contra mim.",
     author: "Rafael T.",
+    photo: "/images/testimonials/rafael.webp",
+    photoAlt: "Rafael T.",
   },
   {
     quote:
       "Design simples, direto ao ponto, sem enfeite que distrai. Minha organização melhorou muito desde que comecei a usar todos os dias.",
     author: "Bianca S.",
+    photo: "/images/testimonials/bianca.webp",
+    photoAlt: "Bianca S.",
   },
 ];
 

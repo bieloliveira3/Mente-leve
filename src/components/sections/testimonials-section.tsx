@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { testimonials } from "@/lib/content";
 
@@ -8,27 +9,27 @@ export function TestimonialsSection() {
         A transformação é real
       </h2>
 
-      <div className="mx-auto mt-12 max-w-2xl space-y-6">
+      <ul className="mx-auto mt-10 max-w-xl space-y-5">
         {testimonials.map((testimonial) => (
-          <div
-            key={testimonial.author}
-            className="relative rounded-2xl border border-border/70 bg-secondary/50 p-6 shadow-sm"
-          >
-            <span
-              aria-hidden
-              className="absolute -left-2 -top-4 font-heading text-5xl text-primary/20"
-            >
-              &ldquo;
-            </span>
-            <p className="relative text-base italic leading-relaxed text-foreground sm:text-lg">
-              {testimonial.quote}
-            </p>
-            <p className="mt-4 text-right font-semibold text-primary">
-              — {testimonial.author}
-            </p>
-          </div>
+          <li key={testimonial.author} className="flex items-start gap-3">
+            <Image
+              src={testimonial.photo}
+              alt={testimonial.photoAlt}
+              width={96}
+              height={96}
+              className="h-12 w-12 shrink-0 rounded-full object-cover shadow-sm ring-2 ring-card"
+            />
+            <div className="relative min-w-0 flex-1 rounded-2xl rounded-tl-md bg-secondary/70 px-4 py-3 shadow-sm">
+              <span
+                aria-hidden
+                className="absolute -left-1.5 top-4 h-3 w-3 rotate-45 bg-secondary/70"
+              />
+              <p className="text-sm leading-relaxed text-foreground">{testimonial.quote}</p>
+              <p className="mt-2 text-xs font-semibold text-primary">{testimonial.author}</p>
+            </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </Section>
   );
 }
