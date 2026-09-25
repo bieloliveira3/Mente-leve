@@ -4,9 +4,9 @@ import {
   CreditCard,
   HeartHandshake,
   Lock,
-  NotebookPen,
   ShieldCheck,
 } from "lucide-react";
+import { Logo } from "@/components/logo";
 import { brand, footer, pricing } from "@/lib/content";
 
 const badgeIcons = [Lock, ShieldCheck, CreditCard, Clock];
@@ -59,10 +59,9 @@ export function Footer() {
       <div className="px-4 py-10 sm:px-6">
         <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
-            <p className="flex items-center gap-2 font-heading text-xl font-bold tracking-tight">
-              <NotebookPen className="h-5 w-5 text-primary" aria-hidden />
-              {brand.name}
-            </p>
+            <Link href="/#top" className="inline-flex">
+              <Logo className="h-14" />
+            </Link>
             <p className="mt-3 text-sm leading-relaxed text-secondary-foreground/70">
               {footer.description}
             </p>
