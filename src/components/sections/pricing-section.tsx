@@ -39,7 +39,7 @@ export function PricingSection() {
         </div>
 
         <Image
-          src="/images/hero/capa-livro-2.webp"
+          src="/images/hero/capa-livro-3.webp"
           alt="Capa do Planner Mente Leve"
           width={744}
           height={1135}
