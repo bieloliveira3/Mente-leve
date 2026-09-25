@@ -57,8 +57,8 @@ export function Footer() {
 
       {/* Colunas institucionais */}
       <div className="px-4 py-10 sm:px-6">
-        <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="sm:col-span-2 lg:col-span-1">
+        <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2">
+          <div>
             <Link href="/#top" className="inline-flex">
               <Logo className="h-14" />
             </Link>

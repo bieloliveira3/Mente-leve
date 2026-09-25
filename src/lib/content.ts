@@ -274,23 +274,6 @@ export const footer = {
     "Ferramentas de organização pensadas para mentes que funcionam fora da caixa. Metade de cada venda é destinada a instituições de cuidado com pessoas com TDAH.",
   columns: [
     {
-      title: "O planner",
-      links: [
-        { label: "Como funciona", href: "/#como-funciona" },
-        { label: "O que vem dentro", href: "/#beneficios" },
-        { label: "Bônus inclusos", href: "/#bonus" },
-        { label: "Preço e oferta", href: "/#pricing" },
-      ],
-    },
-    {
-      title: "Suporte",
-      links: [
-        { label: "Perguntas frequentes", href: "/#faq" },
-        { label: "Falar com o suporte", href: "mailto:contato@menteleveplanner.com" },
-        { label: "Nosso impacto social", href: "/#impacto" },
-      ],
-    },
-    {
       title: "Legal",
       links: [
         { label: "Termos de uso", href: "/termos" },
