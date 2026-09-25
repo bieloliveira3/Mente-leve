@@ -6,7 +6,7 @@ const icons = [Shuffle, Layers, ListChecks];
 
 export function ScienceSection() {
   return (
-    <Section className="bg-secondary/60">
+    <Section id="como-funciona" className="bg-secondary/60">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
           {scienceSection.title}

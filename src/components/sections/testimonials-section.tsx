@@ -3,7 +3,7 @@ import { testimonials } from "@/lib/content";
 
 export function TestimonialsSection() {
   return (
-    <Section>
+    <Section id="depoimentos">
       <h2 className="text-center font-heading text-3xl font-bold text-foreground sm:text-4xl">
         A transformação é real
       </h2>

@@ -20,7 +20,7 @@ function BenefitList({ title, items }: { title: string; items: string[] }) {
 
 export function BenefitsSection() {
   return (
-    <Section>
+    <Section id="beneficios">
       <h2 className="text-center font-heading text-3xl font-bold text-foreground sm:text-4xl">
         {benefits.title}
       </h2>

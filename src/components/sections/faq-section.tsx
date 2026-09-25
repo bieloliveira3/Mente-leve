@@ -9,7 +9,7 @@ import { faqs } from "@/lib/content";
 
 export function FaqSection() {
   return (
-    <Section>
+    <Section id="faq">
       <h2 className="text-center font-heading text-3xl font-bold text-foreground sm:text-4xl">
         Perguntas frequentes
       </h2>

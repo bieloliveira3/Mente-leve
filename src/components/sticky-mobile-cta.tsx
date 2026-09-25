@@ -33,19 +33,21 @@ export function StickyMobileCta() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card/95 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur transition-transform duration-300 sm:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card/95 px-3 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur transition-transform duration-300 sm:hidden ${
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
       <div className="flex items-center gap-3">
-        <div className="shrink-0">
-          <p className="text-[11px] text-muted-foreground line-through">{pricing.originalPrice}</p>
-          <p className="font-heading text-lg font-black text-foreground">
+        <div className="shrink-0 leading-none">
+          <p className="text-[10px] text-muted-foreground line-through">
+            {pricing.originalPrice}
+          </p>
+          <p className="font-heading text-base font-black text-foreground">
             {pricing.currentPrice},{pricing.currentPriceCents}
           </p>
         </div>
-        <CheckoutButton className="h-11 animate-none text-sm">
-          {pricing.ctaLabel}
+        <CheckoutButton className="h-11 w-auto min-w-0 flex-1 animate-none px-4 text-[13px] tracking-normal">
+          {pricing.ctaLabelShort}
         </CheckoutButton>
       </div>
     </div>

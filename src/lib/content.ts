@@ -23,6 +23,7 @@ export const hero = {
     "Acesso imediato após a compra",
     "Garantia de 30 dias",
   ],
+  impactBadge: "50% de cada venda vai para instituições de apoio ao TDAH",
 };
 
 export const scienceSection = {
@@ -145,15 +146,53 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
+// ⚠️ Troque o nome, as credenciais e a foto pela pessoa real que assina o
+// produto. Credencial profissional é um dos maiores gatilhos de autoridade
+// deste nicho — mas só use se for verdadeira.
 export const creatorStory = {
-  name: "Marina A.",
-  role: "Idealizadora do Mente Leve",
-  initials: "MA",
+  name: "Dra. Marina A.",
+  role: "Médica e idealizadora do Mente Leve",
+  photo: "/images/creator/criadora.png",
+  photoAlt: "Dra. Marina A., médica e idealizadora do Mente Leve",
+  credentialBadge: "Atendimento clínico há mais de 10 anos",
   paragraphs: [
-    "\"Por anos, minha mesa foi um mar de post-its e cadernos pela metade. Como adulta com TDAH, a organização tradicional nunca funcionou pra mim — e isso me fazia sentir inadequada.\"",
-    "\"Depois de testar (e abandonar) dezenas de métodos, entendi que o problema não era eu: era o sistema que não respeitava como minha mente funciona.\"",
-    "\"Criei o Mente Leve pensando em uma ferramenta que se adapta ao seu cérebro, e não o contrário. Espero que ele te traga a mesma clareza que trouxe pra mim.\"",
+    "\"No consultório, eu ouvia a mesma frase quase todos os dias: 'eu sei o que preciso fazer, só não consigo começar'. E eu conhecia bem essa sensação — como adulta com TDAH, minha mesa foi por anos um mar de post-its e cadernos pela metade.\"",
+    "\"Depois de testar (e abandonar) dezenas de métodos, entendi que o problema não era o paciente, nem eu: era o sistema, que nunca respeitou como esse cérebro realmente funciona.\"",
+    "\"Criei o Mente Leve como a ferramenta que eu queria ter tido: uma que se adapta ao seu cérebro, e não o contrário. E decidi que metade de cada venda voltaria para quem cuida de quem mais precisa.\"",
   ],
+};
+
+/**
+ * Impacto social da oferta — um diferencial real de posicionamento frente
+ * aos concorrentes do nicho, que competem apenas por preço.
+ * Ajuste os textos e, se possível, cite as instituições parceiras pelo nome
+ * (prova concreta converte muito mais do que promessa genérica).
+ */
+export const socialImpact = {
+  highlight: "50%",
+  eyebrow: "Compra com propósito",
+  title: "Metade de cada venda vai para quem cuida de pessoas com TDAH",
+  description:
+    "50% do valor de cada planner vendido é destinado a instituições que acolhem crianças e adultos com TDAH — ajudando a custear diagnóstico, terapia e suporte para famílias que não têm acesso a esse cuidado.",
+  pillars: [
+    {
+      title: "Crianças com TDAH",
+      description:
+        "Apoio a projetos de diagnóstico precoce e acompanhamento escolar, para que nenhuma criança seja rotulada de \"preguiçosa\".",
+    },
+    {
+      title: "Adultos com TDAH",
+      description:
+        "Ajuda no acesso a terapia e grupos de apoio para adultos que passaram a vida inteira sem entender o próprio funcionamento.",
+    },
+    {
+      title: "Transparência total",
+      description:
+        "Publicamos periodicamente o valor repassado e as instituições beneficiadas, para você acompanhar onde sua compra chegou.",
+    },
+  ],
+  closingLine:
+    "Ou seja: ao organizar a sua rotina, você também paga parte do cuidado de alguém que não teria como pagar.",
 };
 
 export const pricing = {
@@ -175,6 +214,8 @@ export const pricing = {
   ],
   bonusSectionTitle: "🎁 Bônus inclusos",
   ctaLabel: "GARANTIR MEU PLANNER",
+  ctaLabelShort: "GARANTIR AGORA",
+  impactNote: "50% da sua compra vai para instituições de cuidado com TDAH",
   guaranteeNote: "🛡️ Garantia de 30 dias ou seu dinheiro de volta",
   paymentNote: "Pagamento único. Sem assinaturas.",
   urgencyLabel: "Bônus por tempo limitado",
@@ -220,9 +261,51 @@ export const faqs: FaqItem[] = [
   },
 ];
 
+/**
+ * Rodapé no padrão usado por páginas de venda que convertem bem:
+ * navegação por âncoras + suporte + links legais + selos de confiança +
+ * aviso legal. Cada bloco é editável de forma independente.
+ */
 export const footer = {
   description:
-    "Ferramentas de organização pensadas para mentes que funcionam fora da caixa.",
+    "Ferramentas de organização pensadas para mentes que funcionam fora da caixa. Metade de cada venda é destinada a instituições de cuidado com pessoas com TDAH.",
+  columns: [
+    {
+      title: "O planner",
+      links: [
+        { label: "Como funciona", href: "/#como-funciona" },
+        { label: "O que vem dentro", href: "/#beneficios" },
+        { label: "Bônus inclusos", href: "/#bonus" },
+        { label: "Preço e oferta", href: "/#pricing" },
+      ],
+    },
+    {
+      title: "Suporte",
+      links: [
+        { label: "Perguntas frequentes", href: "/#faq" },
+        { label: "Falar com o suporte", href: "mailto:contato@menteleveplanner.com" },
+        { label: "Nosso impacto social", href: "/#impacto" },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { label: "Termos de uso", href: "/termos" },
+        { label: "Política de privacidade", href: "/privacidade" },
+        { label: "Política de reembolso", href: "/reembolso" },
+      ],
+    },
+  ],
+  trustBadges: [
+    "Compra 100% segura",
+    "Garantia de 30 dias",
+    "Pix, cartão ou boleto",
+    "Acesso imediato",
+  ],
+  disclaimer:
+    "O Mente Leve é um material educacional de organização pessoal. Ele não realiza diagnóstico e não substitui avaliação, tratamento ou acompanhamento por profissional de saúde qualificado. Resultados variam de pessoa para pessoa.",
+  // ⚠️ Preencha com os dados reais da sua empresa antes de anunciar.
+  companyLine: "Mente Leve • CNPJ 00.000.000/0001-00",
   copyrightName: "Mente Leve",
 };
 

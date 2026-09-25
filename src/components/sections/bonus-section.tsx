@@ -13,7 +13,7 @@ const iconMap: Record<Bonus["icon"], typeof Brain> = {
 
 export function BonusSection() {
   return (
-    <Section className="bg-accent/40">
+    <Section id="bonus" className="bg-accent/40">
       <h2 className="text-center font-heading text-3xl font-bold text-foreground sm:text-4xl">
         Bônus exclusivos inclusos
       </h2>

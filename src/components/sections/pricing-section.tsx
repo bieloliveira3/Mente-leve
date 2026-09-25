@@ -1,4 +1,4 @@
-import { Check, ShieldCheck } from "lucide-react";
+import { Check, HeartHandshake, ShieldCheck } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { CheckoutButton } from "@/components/checkout-button";
 import { UrgencyBanner } from "@/components/urgency-banner";
@@ -66,7 +66,12 @@ export function PricingSection() {
           </div>
         </div>
 
-        <div className="mt-6">
+        <p className="mt-6 flex items-center justify-center gap-2 rounded-xl border border-primary/30 bg-primary/10 px-4 py-3 text-center text-sm font-semibold text-primary">
+          <HeartHandshake className="h-4 w-4 shrink-0" aria-hidden />
+          {pricing.impactNote}
+        </p>
+
+        <div className="mt-4">
           <CheckoutButton>{pricing.ctaLabel}</CheckoutButton>
         </div>
 

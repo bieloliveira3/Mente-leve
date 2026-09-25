@@ -38,7 +38,7 @@ export function CheckoutButton({
           }
         }}
       >
-        {children}
+        <span className="min-w-0 truncate">{children}</span>
       </a>
     </Button>
   );
