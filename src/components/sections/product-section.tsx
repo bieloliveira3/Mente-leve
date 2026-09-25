@@ -10,23 +10,23 @@ export function ProductSection() {
       </h2>
       <p className="mx-auto mt-3 max-w-lg text-center text-muted-foreground">{productShowcase.note}</p>
 
-      <div className="mt-10 grid items-center gap-8 md:grid-cols-[minmax(0,16rem)_minmax(0,1fr)] md:gap-12">
+      <div className="mx-auto mt-10 flex max-w-4xl flex-col items-center gap-8">
         <Image
           src="/images/hero/capa-livro-3.webp"
           alt="Capa do Planner Mente Leve"
           width={744}
           height={1135}
           quality={92}
-          sizes="(max-width: 768px) 220px, 280px"
-          className="mx-auto h-auto w-[200px] sm:w-[240px]"
+          sizes="200px"
+          className="h-auto w-[160px] sm:w-[180px]"
         />
-        <div id="produto">
+        <div id="produto" className="w-full">
           <Image
-            src="/images/hero/produto.webp"
-            alt="Planner Mente Leve no tablet e no celular, com cinco ebooks de bônus"
-            width={2128}
-            height={2548}
-            sizes="(max-width: 768px) 100vw, 36rem"
+            src="/images/hero/bonus-ebooks.webp"
+            alt="Cinco ebooks de bônus: Guia Explorar o TDAH, Mapa das Emoções, Checklist Casa em Ordem, Workbook Bem-Estar e Diário Padrões e Progresso"
+            width={1312}
+            height={1199}
+            sizes="(max-width: 768px) 100vw, 56rem"
             className="h-auto w-full rounded-3xl shadow-xl"
           />
         </div>

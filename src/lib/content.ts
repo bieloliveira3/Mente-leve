@@ -47,7 +47,7 @@ export const method = {
 
 export const productShowcase = {
   title: "Veja o que você leva para casa.",
-  note: "Planejamentos diários, semanais e mensais, sem data fixa.",
+  note: "O planner e mais 5 ebooks de bônus.",
   labels: [
     "Organização diária",
     "Semana",
