@@ -6,6 +6,7 @@ import {
   Lock,
   ShieldCheck,
 } from "lucide-react";
+import { CheckoutButton } from "@/components/checkout-button";
 import { Logo } from "@/components/logo";
 import { brand, footer, pricing } from "@/lib/content";
 
@@ -27,12 +28,9 @@ export function Footer() {
             {pricing.guaranteeNote.replace("🛡️ ", "").toLowerCase()}.
           </p>
           <div className="mt-6 flex justify-center">
-            <Link
-              href="/#pricing"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-bold uppercase tracking-wide text-primary-foreground shadow-lg transition-transform hover:scale-[1.03] sm:text-base"
-            >
+            <CheckoutButton className="h-12 w-auto animate-none px-8 text-sm sm:text-base">
               Ver a oferta completa
-            </Link>
+            </CheckoutButton>
           </div>
         </div>
       </div>

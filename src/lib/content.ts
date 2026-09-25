@@ -294,12 +294,10 @@ export const footer = {
 };
 
 /**
- * URL de checkout do produto (Hotmart, Kiwify, Stripe, etc.).
- * Configure a variável de ambiente NEXT_PUBLIC_CHECKOUT_URL para apontar
- * para o seu link de checkout real. Enquanto isso, o botão leva para uma
- * página interna explicando como configurar.
+ * URL de checkout do produto. NEXT_PUBLIC_CHECKOUT_URL substitui o padrão
+ * quando estiver definida.
  */
 export const checkoutBaseUrl =
   process.env.NEXT_PUBLIC_CHECKOUT_URL && process.env.NEXT_PUBLIC_CHECKOUT_URL.length > 0
     ? process.env.NEXT_PUBLIC_CHECKOUT_URL
-    : "/checkout";
+    : "https://pay.cakto.com.br/3am8wy3_1137980";

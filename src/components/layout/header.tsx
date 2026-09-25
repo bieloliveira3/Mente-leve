@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { CheckoutButton } from "@/components/checkout-button";
 import { Logo } from "@/components/logo";
 
 export function Header() {
@@ -9,12 +9,12 @@ export function Header() {
         <Link href="/#top" className="inline-flex items-center">
           <Logo />
         </Link>
-        <Button asChild size="sm" className="hidden sm:inline-flex">
-          <a href="#pricing">Garantir o meu</a>
-        </Button>
-        <Button asChild size="sm" className="sm:hidden">
-          <a href="#pricing">Quero o meu</a>
-        </Button>
+        <CheckoutButton className="hidden h-8 w-auto animate-none rounded-lg px-3 text-sm font-medium normal-case tracking-normal sm:inline-flex">
+          Garantir o meu
+        </CheckoutButton>
+        <CheckoutButton className="h-8 w-auto animate-none rounded-lg px-3 text-sm font-medium normal-case tracking-normal sm:hidden">
+          Quero o meu
+        </CheckoutButton>
       </div>
     </header>
   );
