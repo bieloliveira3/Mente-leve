@@ -23,12 +23,15 @@ const countdownScript = `
   }
   function pad(value) { return String(value).padStart(2, "0"); }
   function tick() {
-    var el = document.getElementById("offer-countdown");
-    if (!el) return;
     var total = Math.max(0, Math.floor((readDeadline() - Date.now()) / 1000));
-    el.textContent = pad(Math.floor(total / 3600)) + ":" + pad(Math.floor((total % 3600) / 60)) + ":" + pad(total % 60);
+    var text = pad(Math.floor(total / 3600)) + ":" + pad(Math.floor((total % 3600) / 60)) + ":" + pad(total % 60);
+    var header = document.getElementById("offer-countdown");
+    var urgency = document.getElementById("urgency-countdown");
+    if (header) header.textContent = text;
+    if (urgency) urgency.textContent = text;
   }
   tick();
+  document.addEventListener("DOMContentLoaded", tick);
   setInterval(tick, 1000);
 })();
 `;
