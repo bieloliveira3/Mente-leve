@@ -14,16 +14,66 @@ export const brand = {
 };
 
 export const hero = {
-  eyebrow: "Baseado em rotinas reais de quem vive com TDAH",
-  headline: "Finalmente, um planner feito para o cérebro com TDAH.",
+  headline: "Sua cabeça está cheia de coisas.",
+  headlineAccent: "O Mente Leve transforma esse caos em um caminho claro.",
   subheadline:
-    "Pare de se cobrar por não conseguir seguir planners \"normais\". O Mente Leve foi desenhado sem datas, sem culpa e com a flexibilidade que sua rotina precisa — para você organizar a vida no seu próprio ritmo.",
-  trustBullets: [
-    "Pagamento único, sem assinatura",
-    "Acesso imediato após a compra",
-    "Garantia de 30 dias",
+    "Um sistema de organização pensado para adultos com TDAH ou que têm dificuldade para manter foco, rotina e organização — sem transformar sua vida em mais uma lista impossível de cumprir.",
+  cta: "Quero o Mente Leve",
+  trustLine: "Pagamento único • Acesso imediato • Garantia de 30 dias",
+};
+
+export const painPoints = {
+  title: "Talvez o problema não seja falta de vontade.",
+  items: [
+    "Começa várias coisas e termina poucas",
+    "Sabe o que precisa fazer, mas não consegue começar",
+    "Se perde em listas enormes",
+    "Esquece tarefas importantes",
+    "Sente a cabeça constantemente cheia",
+    "Abandona planners porque parecem difíceis demais de manter",
   ],
-  impactBadge: "50% de cada venda vai para instituições de apoio ao TDAH",
+};
+
+export const method = {
+  title: "Da cabeça cheia para o próximo passo.",
+  closing: "Você não precisa ser perfeitamente organizado para conseguir se organizar.",
+  steps: [
+    { number: "01", title: "Despeje", description: "Tire as coisas da cabeça." },
+    { number: "02", title: "Organize", description: "Transforme o caos em algo visual." },
+    { number: "03", title: "Escolha", description: "Defina o que realmente importa agora." },
+    { number: "04", title: "Retome", description: "Se um dia sair do controle, simplesmente volte." },
+  ],
+};
+
+export const productShowcase = {
+  title: "Veja o que você leva para casa.",
+  note: "Planejamentos diários, semanais e mensais, sem data fixa.",
+  labels: [
+    "Organização diária",
+    "Semana",
+    "Mês",
+    "Foco",
+    "Projetos",
+    "Rotina",
+    "Reflexão",
+    "Acompanhamento",
+  ],
+};
+
+export const differentials = {
+  title: "Feito para funcionar com você — não contra você.",
+  items: [
+    { title: "Sem datas rígidas", description: "Você pode começar quando quiser." },
+    { title: "Menos decisões", description: "Organize o que realmente importa." },
+    { title: "Tarefas mais simples", description: "Transforme grandes problemas em próximos passos." },
+    { title: "Recomeço sem culpa", description: "Perdeu alguns dias? Basta continuar." },
+  ],
+};
+
+export const finalCta = {
+  title: "Menos caos na cabeça.",
+  titleAccent: "Mais clareza para o próximo passo.",
+  text: "Um planner para usar no seu ritmo, com pagamento único e 30 dias para decidir se faz sentido.",
 };
 
 export const scienceSection = {
@@ -159,12 +209,11 @@ export const testimonials: Testimonial[] = [
 // Brasil exige identificação profissional, e credencial real é o maior
 // gatilho de autoridade deste nicho — nunca use uma credencial falsa.
 export const creatorStory = {
-  name: "Dra. Aline",
+  name: "Dra. Aline Vieira",
   role: "Médica e idealizadora do Mente Leve",
   crm: "",
   photo: "/images/creator/criadora-cerebro.webp",
-  photoAlt:
-    "Dra. Aline, médica e idealizadora do Mente Leve, segurando um modelo anatômico de cérebro",
+  photoAlt: "Dra. Aline Vieira, idealizadora do Mente Leve",
   credentialBadge: "Atendimento clínico há mais de 10 anos",
   paragraphs: [
     "\"No consultório, eu ouvia a mesma frase quase todos os dias: 'eu sei o que preciso fazer, só não consigo começar'. E eu conhecia bem essa sensação — como adulta com TDAH, minha mesa foi por anos um mar de post-its e cadernos pela metade.\"",
@@ -223,9 +272,9 @@ export const pricing = {
     "Imprima quantas vezes quiser",
     "Atualizações grátis para sempre",
   ],
-  bonusSectionTitle: "🎁 Bônus inclusos",
-  ctaLabel: "GARANTIR MEU PLANNER",
-  ctaLabelShort: "GARANTIR AGORA",
+  bonusSectionTitle: "Bônus inclusos",
+  ctaLabel: "Quero o Mente Leve por R$27",
+  ctaLabelShort: "Por R$27",
   impactNote: "50% da sua compra vai para instituições de cuidado com TDAH",
   guaranteeNote: "🛡️ Garantia de 30 dias ou seu dinheiro de volta",
   paymentNote: "Pagamento único. Sem assinaturas.",
@@ -234,9 +283,9 @@ export const pricing = {
 };
 
 export const guarantee = {
-  title: "Experimente sem risco por 30 dias",
+  title: "30 dias para conhecer",
   description:
-    "Temos uma garantia de satisfação de 30 dias. Se você sentir que o planner não atendeu às suas expectativas, é só nos contatar dentro desse prazo para um reembolso total, sem burocracia.",
+    "Você tem 30 dias para conhecer o Mente Leve. Se não fizer sentido para você, utilize as condições de reembolso já previstas na oferta.",
 };
 
 export type FaqItem = {
@@ -246,29 +295,43 @@ export type FaqItem = {
 
 export const faqs: FaqItem[] = [
   {
-    question: "Como funciona o planner?",
+    question: "Como recebo o acesso?",
     answer:
-      "Você recebe um arquivo em PDF de alta qualidade, nos tamanhos A4 e A5, pronto para imprimir em casa ou em gráfica. Pode imprimir quantas páginas precisar, quantas vezes quiser. Recomendamos papel de gramatura média a alta para maior durabilidade.",
+      "Depois da confirmação do pagamento, o acesso ao PDF chega por e-mail. O envio é imediato.",
   },
   {
-    question: "Como recebo o planner após a compra?",
+    question: "O pagamento é único?",
     answer:
-      "Imediatamente após a confirmação do pagamento, você recebe um e-mail com o link de acesso ao seu planner em PDF. O processo é instantâneo.",
+      "Sim. Você paga uma vez e não há assinatura nem cobrança recorrente.",
   },
   {
-    question: "É um pagamento único ou uma assinatura?",
+    question: "Posso usar no celular ou tablet?",
     answer:
-      "É 100% pagamento único. Você compra uma vez e tem acesso vitalício ao planner e a todas as atualizações futuras, sem nenhuma taxa recorrente.",
+      "Sim. O arquivo pode ser aberto no celular, no tablet ou no computador.",
   },
   {
-    question: "E se não funcionar para mim?",
+    question: "Posso imprimir?",
     answer:
-      "Você tem 30 dias de garantia. Se sentir que o planner não atendeu às suas expectativas, basta nos contatar dentro desse prazo para um reembolso total, sem complicação.",
+      "Sim. O planner vem em PDF pronto para imprimir, quantas vezes você quiser.",
   },
   {
-    question: "Preciso ter diagnóstico de TDAH para usar?",
+    question: "Quais formatos estão disponíveis?",
+    answer: "O material é entregue em PDF, nos tamanhos A4 e A5.",
+  },
+  {
+    question: "Preciso ter TDAH para usar?",
     answer:
-      "Não. O planner foi desenvolvido para ajudar qualquer pessoa que se identifique com os desafios do TDAH, mesmo sem diagnóstico formal. As estratégias funcionam para quem busca mais foco e organização no dia a dia.",
+      "Não. Ele serve para quem se identifica com essa dificuldade de foco e organização, com ou sem diagnóstico.",
+  },
+  {
+    question: "Existe garantia?",
+    answer:
+      "Sim. São 30 dias. Se não fizer sentido, vale o que está na política de reembolso da oferta.",
+  },
+  {
+    question: "O Mente Leve substitui acompanhamento profissional?",
+    answer:
+      "Não. É um material educacional de organização. Não faz diagnóstico e não substitui avaliação, tratamento ou acompanhamento de um profissional de saúde.",
   },
 ];
 

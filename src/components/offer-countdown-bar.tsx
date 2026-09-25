@@ -38,8 +38,11 @@ const countdownScript = `
 
 export function OfferCountdownBar() {
   return (
-    <div className="bg-primary px-3 py-1.5 text-center text-xs font-semibold text-primary-foreground sm:text-sm">
-      A oferta acaba em{" "}
+    <div className="bg-foreground px-3 py-1.5 text-center text-[11px] font-semibold tracking-wide text-background sm:text-xs">
+      Oferta de lançamento · R$27 · condição por tempo limitado
+      <span className="mx-1.5 opacity-50" aria-hidden>
+        ·
+      </span>
       <span id="offer-countdown" className="tabular-nums">
         24:00:00
       </span>

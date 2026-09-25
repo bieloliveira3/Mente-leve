@@ -11,7 +11,7 @@ export function FaqSection() {
   return (
     <Section id="faq">
       <h2 className="text-center font-heading text-3xl font-bold text-foreground sm:text-4xl">
-        Perguntas frequentes
+        Antes de decidir
       </h2>
 
       <div className="mx-auto mt-10 max-w-2xl">

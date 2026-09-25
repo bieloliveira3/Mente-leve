@@ -6,26 +6,24 @@ export function TestimonialsSection() {
   return (
     <Section id="depoimentos">
       <h2 className="text-center font-heading text-3xl font-bold text-foreground sm:text-4xl">
-        A transformação é real
+        Quem já usa
       </h2>
-
-      <ul className="mx-auto mt-10 max-w-xl space-y-5">
+      <ul className="mt-8 grid gap-4 lg:grid-cols-3">
         {testimonials.map((testimonial) => (
-          <li key={testimonial.author} className="flex items-start gap-3">
-            <Image
-              src={testimonial.photo}
-              alt={testimonial.photoAlt}
-              width={96}
-              height={96}
-              className="h-12 w-12 shrink-0 rounded-full object-cover shadow-sm ring-2 ring-card"
-            />
-            <div className="relative min-w-0 flex-1 rounded-2xl rounded-tl-md bg-secondary/70 px-4 py-3 shadow-sm">
-              <span
-                aria-hidden
-                className="absolute -left-1.5 top-4 h-3 w-3 rotate-45 bg-secondary/70"
+          <li key={testimonial.author} className="flex flex-col rounded-3xl border border-border bg-card p-5">
+            <p className="text-sm tracking-widest text-gold" aria-label="5 de 5 estrelas">
+              ★★★★★
+            </p>
+            <p className="mt-3 flex-1 text-sm leading-relaxed text-foreground">{testimonial.quote}</p>
+            <div className="mt-5 flex items-center gap-3">
+              <Image
+                src={testimonial.photo}
+                alt={testimonial.photoAlt}
+                width={96}
+                height={96}
+                className="h-11 w-11 rounded-full object-cover"
               />
-              <p className="text-sm leading-relaxed text-foreground">{testimonial.quote}</p>
-              <p className="mt-2 text-xs font-semibold text-primary">{testimonial.author}</p>
+              <p className="text-sm font-semibold text-foreground">{testimonial.author}</p>
             </div>
           </li>
         ))}

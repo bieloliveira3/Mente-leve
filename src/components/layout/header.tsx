@@ -13,7 +13,7 @@ export function Header() {
             <Logo />
           </Link>
           <CheckoutButton className="hidden h-8 w-auto animate-none rounded-lg px-3 text-sm font-medium normal-case tracking-normal sm:inline-flex">
-            Garantir o meu
+            Quero o Mente Leve
           </CheckoutButton>
           <CheckoutButton className="h-8 w-auto animate-none rounded-lg px-3 text-sm font-medium normal-case tracking-normal sm:hidden">
             Quero o meu

@@ -1,41 +1,29 @@
 import Image from "next/image";
-import { BadgeCheck } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { creatorStory } from "@/lib/content";
 
 export function CreatorSection() {
   return (
     <Section id="criadora" className="bg-secondary/40">
-      <h2 className="text-center font-heading text-3xl font-bold text-foreground sm:text-4xl">
-        Uma ferramenta criada por quem entende
-      </h2>
-
-      <div className="mt-10 flex flex-col items-center gap-8 md:flex-row md:gap-10">
-        <div className="flex w-full max-w-[16rem] shrink-0 flex-col items-center gap-3 md:max-w-[18rem]">
-          <Image
-            src={creatorStory.photo}
-            alt={creatorStory.photoAlt}
-            width={800}
-            height={1067}
-            sizes="(max-width: 768px) 256px, 288px"
-            className="h-auto w-full rounded-3xl border-4 border-card shadow-xl"
-            priority
-          />
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1 text-center text-xs font-semibold text-muted-foreground shadow-sm">
-            <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden />
-            {creatorStory.credentialBadge}
-          </span>
-        </div>
-
-        <div className="text-center md:text-left">
-          {creatorStory.paragraphs.map((paragraph) => (
-            <p key={paragraph} className="mb-4 text-base leading-relaxed text-foreground sm:text-lg">
-              {paragraph}
-            </p>
-          ))}
-          <p className="font-semibold text-primary">
-            — {creatorStory.name}, {creatorStory.role}
-            {creatorStory.crm ? ` • ${creatorStory.crm}` : ""}
+      <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
+        <Image
+          src={creatorStory.photo}
+          alt={creatorStory.photoAlt}
+          width={800}
+          height={1067}
+          sizes="160px"
+          className="h-40 w-32 shrink-0 rounded-3xl object-cover object-top shadow-md"
+        />
+        <div>
+          <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl">
+            {creatorStory.name}
+          </h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {creatorStory.role}
+            {creatorStory.credentialBadge ? ` · ${creatorStory.credentialBadge}` : ""}
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-foreground sm:text-base">
+            {creatorStory.paragraphs[0]}
           </p>
         </div>
       </div>
