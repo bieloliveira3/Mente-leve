@@ -307,8 +307,6 @@ export const footer = {
   ],
   disclaimer:
     "O Mente Leve é um material educacional de organização pessoal. Ele não realiza diagnóstico e não substitui avaliação, tratamento ou acompanhamento por profissional de saúde qualificado. Resultados variam de pessoa para pessoa.",
-  // ⚠️ Preencha com os dados reais da sua empresa antes de anunciar.
-  companyLine: "Mente Leve • CNPJ 00.000.000/0001-00",
   copyrightName: "Mente Leve",
 };
 

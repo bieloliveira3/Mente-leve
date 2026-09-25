@@ -106,8 +106,7 @@ export function Footer() {
               {brand.supportEmail}
             </a>
           </p>
-          <p className="mt-2 text-xs text-secondary-foreground/50">{footer.companyLine}</p>
-          <p className="mt-1 text-xs text-secondary-foreground/50">
+          <p className="mt-2 text-xs text-secondary-foreground/50">
             © {new Date().getFullYear()} {footer.copyrightName}. Todos os direitos reservados.
           </p>
         </div>
