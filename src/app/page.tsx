@@ -5,10 +5,8 @@ import { PainSection } from "@/components/sections/pain-section";
 import { MethodSection } from "@/components/sections/method-section";
 import { ProductSection } from "@/components/sections/product-section";
 import { BonusSection } from "@/components/sections/bonus-section";
-import { DifferentialsSection } from "@/components/sections/differentials-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { CreatorSection } from "@/components/sections/creator-section";
-import { ImpactSection } from "@/components/sections/impact-section";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { GuaranteeSection } from "@/components/sections/guarantee-section";
 import { FaqSection } from "@/components/sections/faq-section";
@@ -24,12 +22,10 @@ export default function Home() {
         <PainSection />
         <MethodSection />
         <ProductSection />
+        <PricingSection />
         <BonusSection />
-        <DifferentialsSection />
         <TestimonialsSection />
         <CreatorSection />
-        <ImpactSection />
-        <PricingSection />
         <GuaranteeSection />
         <FaqSection />
         <FinalCtaSection />

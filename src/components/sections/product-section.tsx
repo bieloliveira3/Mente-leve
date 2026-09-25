@@ -32,16 +32,6 @@ export function ProductSection() {
         </div>
       </div>
 
-      <ul className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2">
-        {productShowcase.labels.map((label) => (
-          <li
-            key={label}
-            className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-semibold text-foreground sm:text-sm"
-          >
-            {label}
-          </li>
-        ))}
-      </ul>
     </Section>
   );
 }

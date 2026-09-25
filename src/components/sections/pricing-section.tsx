@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { CheckoutButton } from "@/components/checkout-button";
-import { UrgencyBanner } from "@/components/urgency-banner";
 import { bonuses, pricing } from "@/lib/content";
 
 export function PricingSection() {
@@ -49,9 +48,6 @@ export function PricingSection() {
         <p className="mt-5 text-center text-sm text-muted-foreground">
           Pagamento único · Acesso imediato · Garantia de 30 dias
         </p>
-        <div className="mt-4 flex justify-center">
-          <UrgencyBanner />
-        </div>
         <CheckoutButton className="mt-5 animate-none">{pricing.ctaLabel}</CheckoutButton>
       </div>
     </Section>

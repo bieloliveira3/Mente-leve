@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { CheckoutButton } from "@/components/checkout-button";
 import { Logo } from "@/components/logo";
 import { OfferCountdownBar } from "@/components/offer-countdown-bar";
+import { Button } from "@/components/ui/button";
 
 export function Header() {
   return (
@@ -12,12 +12,9 @@ export function Header() {
           <Link href="/#top" className="inline-flex items-center">
             <Logo />
           </Link>
-          <CheckoutButton className="hidden h-8 w-auto animate-none rounded-lg px-3 text-sm font-medium normal-case tracking-normal sm:inline-flex">
-            Quero o Mente Leve
-          </CheckoutButton>
-          <CheckoutButton className="h-8 w-auto animate-none rounded-lg px-3 text-sm font-medium normal-case tracking-normal sm:hidden">
-            Quero o meu
-          </CheckoutButton>
+          <Button asChild className="h-8 w-auto rounded-lg px-3 text-sm font-medium">
+            <a href="#pricing">Ver a oferta</a>
+          </Button>
         </div>
       </header>
     </div>

@@ -18,10 +18,7 @@ export function CreatorSection() {
           <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl">
             {creatorStory.name}
           </h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {creatorStory.role}
-            {creatorStory.credentialBadge ? ` · ${creatorStory.credentialBadge}` : ""}
-          </p>
+          <p className="mt-1 text-sm text-muted-foreground">Idealizadora do Mente Leve</p>
           <p className="mt-4 text-sm leading-relaxed text-foreground sm:text-base">
             {creatorStory.paragraphs[0]}
           </p>
