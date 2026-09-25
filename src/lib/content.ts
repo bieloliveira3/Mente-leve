@@ -236,12 +236,12 @@ export const testimonials: Testimonial[] = [
 // Brasil exige identificação profissional, e credencial real é o maior
 // gatilho de autoridade deste nicho — nunca use uma credencial falsa.
 export const creatorStory = {
-  name: "Dra. Aline Vieira",
-  role: "Médica e idealizadora do Mente Leve",
+  name: "Aline Vieira",
+  role: "Idealizadora do Mente Leve",
   crm: "",
   photo: "/images/creator/criadora-cerebro.webp",
-  photoAlt: "Dra. Aline Vieira, idealizadora do Mente Leve",
-  credentialBadge: "Atendimento clínico há mais de 10 anos",
+  photoAlt: "Aline Vieira, idealizadora do Mente Leve",
+  credentialBadge: "",
   paragraphs: [
     "Como adulta com TDAH, minha mesa foi por anos um mar de post-its e cadernos pela metade. Depois de testar e abandonar dezenas de métodos, criei o Mente Leve como a ferramenta que eu queria ter tido.",
     "\"Depois de testar (e abandonar) dezenas de métodos, entendi que o problema não era o paciente, nem eu: era o sistema, que nunca respeitou como esse cérebro realmente funciona.\"",
@@ -369,7 +369,7 @@ export const faqs: FaqItem[] = [
  */
 export const footer = {
   description:
-    "Ferramentas de organização pensadas para mentes que funcionam fora da caixa. Metade de cada venda é destinada a instituições de cuidado com pessoas com TDAH.",
+    "Ferramentas de organização pensadas para mentes que funcionam fora da caixa.",
   columns: [
     {
       title: "Legal",
