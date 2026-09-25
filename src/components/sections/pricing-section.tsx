@@ -39,12 +39,12 @@ export function PricingSection() {
         </div>
 
         <Image
-          src="/images/hero/capa-planner.webp"
+          src="/images/hero/capa-livro.webp"
           alt="Capa do Planner Mente Leve"
-          width={616}
-          height={960}
-          sizes="140px"
-          className="mx-auto mt-6 h-auto w-[140px] drop-shadow-lg"
+          width={590}
+          height={900}
+          sizes="168px"
+          className="mx-auto mt-5 h-auto w-[168px]"
         />
 
         <p className="mt-4 text-center text-sm text-muted-foreground">{pricing.pageCountNote}</p>
