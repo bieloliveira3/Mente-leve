@@ -22,6 +22,33 @@ export const hero = {
   trustLine: "Pagamento único • Acesso imediato • Garantia de 30 dias",
 };
 
+export const insidePages = {
+  title: "O que você vai receber",
+  note: "Páginas reais do planner, sem data fixa.",
+  pages: [
+    {
+      src: "/images/planner/pagina-30.webp",
+      title: "Despejo geral",
+      alt: "Página Despejo geral do planner Mente Leve",
+    },
+    {
+      src: "/images/planner/pagina-53.webp",
+      title: "Semana comum",
+      alt: "Página Semana comum do planner Mente Leve",
+    },
+    {
+      src: "/images/planner/pagina-62.webp",
+      title: "Dia de três coisas",
+      alt: "Página Dia de três coisas do planner Mente Leve",
+    },
+    {
+      src: "/images/planner/pagina-18.webp",
+      title: "Três resultados, não trinta",
+      alt: "Página Três resultados do planner Mente Leve",
+    },
+  ],
+};
+
 export const painPoints = {
   title: "Talvez o problema não seja falta de vontade.",
   items: [
