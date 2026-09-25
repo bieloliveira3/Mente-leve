@@ -94,7 +94,7 @@ export function Footer() {
       </div>
 
       {/* Aviso legal e copyright */}
-      <div className="border-t border-secondary-foreground/10 px-4 pb-28 pt-8 sm:px-6 sm:pb-10">
+      <div className="border-t border-secondary-foreground/10 px-4 pb-28 pt-8 sm:px-6">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs leading-relaxed text-secondary-foreground/60">
             {footer.disclaimer}

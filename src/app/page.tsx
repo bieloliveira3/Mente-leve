@@ -10,7 +10,7 @@ import { ImpactSection } from "@/components/sections/impact-section";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { GuaranteeSection } from "@/components/sections/guarantee-section";
 import { FaqSection } from "@/components/sections/faq-section";
-import { StickyMobileCta } from "@/components/sticky-mobile-cta";
+import { StickyCheckoutBar } from "@/components/sticky-mobile-cta";
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
         <FaqSection />
       </main>
       <Footer />
-      <StickyMobileCta />
+      <StickyCheckoutBar />
     </>
   );
 }
