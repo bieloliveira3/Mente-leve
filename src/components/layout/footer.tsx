@@ -58,7 +58,7 @@ export function Footer() {
         <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2">
           <div>
             <Link href="/#top" className="inline-flex">
-              <Logo className="h-14" />
+              <Logo className="h-8" />
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-secondary-foreground/70">
               {footer.description}
