@@ -1,13 +1,12 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
+import { PricingSection } from "@/components/sections/pricing-section";
 import { PainSection } from "@/components/sections/pain-section";
 import { MethodSection } from "@/components/sections/method-section";
 import { ProductSection } from "@/components/sections/product-section";
-import { BonusSection } from "@/components/sections/bonus-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { CreatorSection } from "@/components/sections/creator-section";
-import { PricingSection } from "@/components/sections/pricing-section";
 import { GuaranteeSection } from "@/components/sections/guarantee-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
@@ -19,11 +18,10 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <PricingSection />
         <PainSection />
         <MethodSection />
         <ProductSection />
-        <PricingSection />
-        <BonusSection />
         <TestimonialsSection />
         <CreatorSection />
         <GuaranteeSection />
