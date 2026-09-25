@@ -1,13 +1,35 @@
 import { CheckoutButton } from "@/components/checkout-button";
 import { pricing } from "@/lib/content";
 
+const revealScript = `
+(function () {
+  var bar = document.getElementById("checkout-bar");
+  var product = document.getElementById("produto");
+  if (!bar || !product) return;
+  var shown = false;
+  function check() {
+    if (shown) return;
+    if (product.getBoundingClientRect().top < window.innerHeight * 0.62) {
+      shown = true;
+      bar.classList.remove("pointer-events-none", "translate-y-full");
+      bar.setAttribute("aria-hidden", "false");
+    }
+  }
+  check();
+  window.addEventListener("scroll", check, { passive: true });
+})();
+`;
+
 /**
- * Barra fixa no rodapé, visível o tempo todo. O preço riscado, o valor atual
- * e o desconto ficam no HTML inicial, sem depender de rolagem.
+ * Barra fixa no rodapé. Entra quando a foto do planner do início chega à tela.
  */
 export function StickyCheckoutBar() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card px-3 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.12)]">
+    <div
+      id="checkout-bar"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-50 translate-y-full border-t border-border bg-card px-3 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.12)] transition-transform duration-300"
+      aria-hidden="true"
+    >
       <div className="mx-auto flex max-w-3xl items-center gap-3">
         <div className="flex shrink-0 items-center gap-2 leading-none">
           <div>
@@ -27,6 +49,7 @@ export function StickyCheckoutBar() {
           <span className="hidden sm:inline">{pricing.ctaLabel}</span>
         </CheckoutButton>
       </div>
+      <script dangerouslySetInnerHTML={{ __html: revealScript }} />
     </div>
   );
 }

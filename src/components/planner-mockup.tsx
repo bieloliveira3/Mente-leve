@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
  */
 export function PlannerMockup({ className }: { className?: string }) {
   return (
-    <div className={cn("relative mx-auto w-full max-w-md", className)}>
+    <div id="produto" className={cn("relative mx-auto w-full max-w-md", className)}>
       <Image
         src="/images/hero/produto.webp"
         alt="Planner Mente Leve no tablet e no celular, com cinco ebooks de bônus"
