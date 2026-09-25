@@ -1,35 +1,13 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { CheckoutButton } from "@/components/checkout-button";
 import { pricing } from "@/lib/content";
 
 /**
- * Barra fixa no rodapé, em todas as larguras. Aparece depois do hero e leva
- * direto ao checkout, com preço atual, preço riscado e desconto.
+ * Barra fixa no rodapé, visível o tempo todo. O preço riscado, o valor atual
+ * e o desconto ficam no HTML inicial, sem depender de rolagem.
  */
 export function StickyCheckoutBar() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const heroEl = document.getElementById("top");
-    if (!heroEl) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => setVisible(!entry.isIntersecting),
-      { threshold: 0.2 }
-    );
-
-    observer.observe(heroEl);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div
-      className={`fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card/95 px-3 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur transition-transform duration-300 ${
-        visible ? "translate-y-0" : "translate-y-full"
-      }`}
-    >
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card px-3 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.12)]">
       <div className="mx-auto flex max-w-3xl items-center gap-3">
         <div className="flex shrink-0 items-center gap-2 leading-none">
           <div>
