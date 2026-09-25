@@ -12,13 +12,13 @@ export function ProductSection() {
 
       <div className="mx-auto mt-10 flex max-w-4xl flex-col items-center gap-8">
         <Image
-          src="/images/hero/capa-livro-3.webp"
-          alt="Capa do Planner Mente Leve"
-          width={744}
-          height={1135}
-          quality={92}
-          sizes="200px"
-          className="h-auto w-[160px] sm:w-[180px]"
+          src="/images/hero/planner-tablet.webp"
+          alt="Planner Mente Leve no tablet e no celular, com a página de planejamento da semana"
+          width={1312}
+          height={1199}
+          quality={90}
+          sizes="(max-width: 768px) 100vw, 56rem"
+          className="h-auto w-full rounded-3xl shadow-xl"
         />
         <div id="produto" className="w-full">
           <Image
