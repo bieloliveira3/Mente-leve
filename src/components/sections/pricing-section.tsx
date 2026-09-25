@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Check, HeartHandshake, ShieldCheck } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { CheckoutButton } from "@/components/checkout-button";
@@ -37,7 +38,16 @@ export function PricingSection() {
           </span>
         </div>
 
-        <p className="text-center text-sm text-muted-foreground">{pricing.pageCountNote}</p>
+        <Image
+          src="/images/hero/capa-planner.webp"
+          alt="Capa do Planner Mente Leve"
+          width={616}
+          height={960}
+          sizes="140px"
+          className="mx-auto mt-6 h-auto w-[140px] drop-shadow-lg"
+        />
+
+        <p className="mt-4 text-center text-sm text-muted-foreground">{pricing.pageCountNote}</p>
         <p className="mt-1 text-center text-xs text-muted-foreground">{pricing.scarcityNote}</p>
 
         <ul className="mt-6 space-y-3">
