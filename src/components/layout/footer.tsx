@@ -1,11 +1,5 @@
 import Link from "next/link";
-import {
-  Clock,
-  CreditCard,
-  HeartHandshake,
-  Lock,
-  ShieldCheck,
-} from "lucide-react";
+import { Clock, CreditCard, Lock, ShieldCheck } from "lucide-react";
 import { CheckoutButton } from "@/components/checkout-button";
 import { Logo } from "@/components/logo";
 import { brand, footer, pricing } from "@/lib/content";
@@ -58,14 +52,10 @@ export function Footer() {
         <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2">
           <div>
             <Link href="/#top" className="inline-flex">
-              <Logo className="h-8" />
+              <Logo className="h-8 sm:h-8" />
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-secondary-foreground/70">
               {footer.description}
-            </p>
-            <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary">
-              <HeartHandshake className="h-3.5 w-3.5 shrink-0" aria-hidden />
-              50% das vendas doados
             </p>
           </div>
 
