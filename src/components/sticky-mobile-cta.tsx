@@ -6,11 +6,9 @@ const revealScript = `
   var reached = false;
   function check() {
     var bar = document.getElementById("checkout-bar");
-    var product = document.getElementById("produto");
-    if (!bar || !product) return;
-    var rect = product.getBoundingClientRect();
-    if (rect.height < 80) return;
-    if (!reached && rect.top < window.innerHeight * 0.72) reached = true;
+    var cta = document.getElementById("hero-cta");
+    if (!bar || !cta) return;
+    if (!reached && cta.getBoundingClientRect().bottom < 8) reached = true;
     if (!reached) return;
     bar.classList.remove("pointer-events-none", "translate-y-full");
     bar.setAttribute("aria-hidden", "false");

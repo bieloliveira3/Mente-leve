@@ -20,7 +20,7 @@ export function Hero() {
             priority
             quality={90}
             sizes="(max-width: 768px) 100vw, 32rem"
-            className="h-auto w-full rounded-3xl shadow-xl"
+            className="mx-auto h-auto w-[86%] rounded-3xl shadow-xl md:w-full"
           />
         </div>
         <div className="text-center md:text-left">
@@ -31,7 +31,7 @@ export function Hero() {
             asChild
             className="mt-5 h-12 w-full max-w-sm rounded-full px-8 text-base font-bold sm:mt-6 sm:h-14 sm:w-auto sm:px-10 sm:text-lg"
           >
-            <a href="#pricing">{hero.cta}</a>
+            <a id="hero-cta" href="#pricing">{hero.cta}</a>
           </Button>
           <p className="mt-4 text-sm text-muted-foreground">{hero.trustLine}</p>
         </div>

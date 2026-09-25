@@ -2,12 +2,13 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { CheckoutButton } from "@/components/checkout-button";
-import { bonuses, pricing } from "@/lib/content";
+import { bonuses, painPoints, pricing } from "@/lib/content";
 
 export function PricingSection() {
   return (
     <Section id="pricing" className="scroll-mt-28 text-center">
-      <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">A oferta</h2>
+      <p className="text-sm font-semibold text-primary sm:text-base">{painPoints.title}</p>
+      <h2 className="mt-2 font-heading text-3xl font-bold text-foreground sm:text-4xl">A oferta</h2>
       <div className="relative mx-auto mt-8 w-full max-w-md rounded-[2rem] border border-primary/40 bg-card p-6 text-left shadow-lg sm:p-8">
         <span className="absolute -top-3 right-6 rounded-full bg-gold px-3 py-1 text-xs font-bold text-foreground">
           {pricing.discountBadge}

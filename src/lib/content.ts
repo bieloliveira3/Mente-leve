@@ -17,7 +17,7 @@ export const hero = {
   headline: "Sua cabeça está cheia de coisas.",
   headlineAccent: "O Mente Leve transforma esse caos em um caminho claro.",
   subheadline:
-    "Um sistema de organização pensado para adultos com TDAH ou que têm dificuldade para manter foco, rotina e organização — sem transformar sua vida em mais uma lista impossível de cumprir.",
+    "Para adultos com TDAH ou dificuldade de foco e rotina, sem mais uma lista impossível.",
   cta: "Quero o Mente Leve",
   trustLine: "Pagamento único • Acesso imediato • Garantia de 30 dias",
 };
