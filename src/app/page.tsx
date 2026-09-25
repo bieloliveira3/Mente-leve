@@ -6,7 +6,6 @@ import { InsideSection } from "@/components/sections/inside-section";
 import { PainSection } from "@/components/sections/pain-section";
 import { MethodSection } from "@/components/sections/method-section";
 import { ProductSection } from "@/components/sections/product-section";
-import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { CreatorSection } from "@/components/sections/creator-section";
 import { GuaranteeSection } from "@/components/sections/guarantee-section";
 import { FaqSection } from "@/components/sections/faq-section";
@@ -24,7 +23,6 @@ export default function Home() {
         <PainSection />
         <MethodSection />
         <ProductSection />
-        <TestimonialsSection />
         <CreatorSection />
         <GuaranteeSection />
         <FaqSection />

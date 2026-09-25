@@ -243,7 +243,7 @@ export const creatorStory = {
   photoAlt: "Dra. Aline Vieira, idealizadora do Mente Leve",
   credentialBadge: "Atendimento clínico há mais de 10 anos",
   paragraphs: [
-    "\"No consultório, eu ouvia a mesma frase quase todos os dias: 'eu sei o que preciso fazer, só não consigo começar'. E eu conhecia bem essa sensação — como adulta com TDAH, minha mesa foi por anos um mar de post-its e cadernos pela metade.\"",
+    "Como adulta com TDAH, minha mesa foi por anos um mar de post-its e cadernos pela metade. Depois de testar e abandonar dezenas de métodos, criei o Mente Leve como a ferramenta que eu queria ter tido.",
     "\"Depois de testar (e abandonar) dezenas de métodos, entendi que o problema não era o paciente, nem eu: era o sistema, que nunca respeitou como esse cérebro realmente funciona.\"",
     "\"Criei o Mente Leve como a ferramenta que eu queria ter tido: uma que se adapta ao seu cérebro, e não o contrário. E decidi que metade de cada venda voltaria para quem cuida de quem mais precisa.\"",
   ],
