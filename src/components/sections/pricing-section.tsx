@@ -7,7 +7,7 @@ import { bonuses, pricing } from "@/lib/content";
 
 export function PricingSection() {
   return (
-    <Section id="pricing" className="text-center">
+    <Section id="pricing" className="scroll-mt-28 text-center">
       <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
         Garanta o seu planner 👇
       </h2>

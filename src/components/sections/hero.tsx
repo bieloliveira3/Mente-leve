@@ -1,7 +1,7 @@
 import { CheckCircle2, HeartHandshake } from "lucide-react";
-import { CheckoutButton } from "@/components/checkout-button";
 import { Section } from "@/components/layout/section";
 import { PlannerMockup } from "@/components/planner-mockup";
+import { Button } from "@/components/ui/button";
 import { hero } from "@/lib/content";
 
 export function Hero() {
@@ -24,9 +24,12 @@ export function Hero() {
             {hero.impactBadge}
           </p>
 
-          <CheckoutButton className="mt-7 h-12 w-full max-w-sm animate-none rounded-full px-8 text-base font-bold normal-case tracking-normal sm:h-14 sm:w-auto sm:px-10 sm:text-lg">
-            Quero organizar minha vida 👇
-          </CheckoutButton>
+          <Button
+            asChild
+            className="mt-7 h-12 w-full max-w-sm rounded-full px-8 text-base font-bold normal-case tracking-normal sm:h-14 sm:w-auto sm:px-10 sm:text-lg"
+          >
+            <a href="#pricing">Quero organizar minha vida 👇</a>
+          </Button>
 
           <ul className="mt-6 flex flex-col items-center gap-2 text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-5 md:justify-start">
             {hero.trustBullets.map((item) => (
