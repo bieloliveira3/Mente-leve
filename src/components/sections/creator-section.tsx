@@ -11,17 +11,18 @@ export function CreatorSection() {
       </h2>
 
       <div className="mt-10 flex flex-col items-center gap-8 md:flex-row md:gap-10">
-        <div className="flex shrink-0 flex-col items-center gap-3">
+        <div className="flex w-full max-w-[16rem] shrink-0 flex-col items-center gap-3 md:max-w-[18rem]">
           <Image
             src={creatorStory.photo}
             alt={creatorStory.photoAlt}
-            width={320}
-            height={320}
-            sizes="(max-width: 768px) 176px, 208px"
-            className="h-44 w-44 rounded-full border-4 border-secondary object-cover shadow-lg md:h-52 md:w-52"
+            width={660}
+            height={880}
+            sizes="(max-width: 768px) 256px, 288px"
+            className="aspect-[3/4] w-full rounded-3xl border-4 border-card object-cover shadow-xl"
+            priority
           />
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1 text-xs font-semibold text-muted-foreground shadow-sm">
-            <BadgeCheck className="h-3.5 w-3.5 text-primary" aria-hidden />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1 text-center text-xs font-semibold text-muted-foreground shadow-sm">
+            <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden />
             {creatorStory.credentialBadge}
           </span>
         </div>

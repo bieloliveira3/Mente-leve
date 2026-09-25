@@ -146,18 +146,17 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-// ⚠️ IMPORTANTE: o nome abaixo precisa bater com a pessoa da foto — no
-// jaleco da imagem está bordado "Dra. Aline Fre...". Complete o nome e o
-// sobrenome corretos e preencha o CRM (deixe `crm` vazio para não exibir).
-// Divulgação de serviço médico no Brasil exige identificação profissional,
-// e credencial real é o maior gatilho de autoridade deste nicho — nunca use
-// uma credencial que não seja verdadeira.
+// ⚠️ IMPORTANTE: confirme o nome completo da pessoa da foto e preencha o
+// CRM (deixe `crm` vazio para não exibir). Divulgação de serviço médico no
+// Brasil exige identificação profissional, e credencial real é o maior
+// gatilho de autoridade deste nicho — nunca use uma credencial falsa.
 export const creatorStory = {
   name: "Dra. Aline",
   role: "Médica e idealizadora do Mente Leve",
   crm: "",
   photo: "/images/creator/criadora.webp",
-  photoAlt: "Dra. Aline, médica e idealizadora do Mente Leve",
+  photoAlt:
+    "Dra. Aline, médica e idealizadora do Mente Leve, segurando um modelo anatômico de cérebro",
   credentialBadge: "Atendimento clínico há mais de 10 anos",
   paragraphs: [
     "\"No consultório, eu ouvia a mesma frase quase todos os dias: 'eu sei o que preciso fazer, só não consigo começar'. E eu conhecia bem essa sensação — como adulta com TDAH, minha mesa foi por anos um mar de post-its e cadernos pela metade.\"",
