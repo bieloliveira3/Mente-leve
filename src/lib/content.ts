@@ -274,7 +274,7 @@ export const pricing = {
   ],
   bonusSectionTitle: "Bônus inclusos",
   ctaLabel: "Quero o Mente Leve por R$27",
-  ctaLabelShort: "Por R$27",
+  ctaLabelShort: "Garantir agora",
   impactNote: "50% da sua compra vai para instituições de cuidado com TDAH",
   guaranteeNote: "🛡️ Garantia de 30 dias ou seu dinheiro de volta",
   paymentNote: "Pagamento único. Sem assinaturas.",

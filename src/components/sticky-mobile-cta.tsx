@@ -48,8 +48,7 @@ export function StickyCheckoutBar() {
           </span>
         </div>
         <CheckoutButton className="h-11 w-auto min-w-0 flex-1 animate-none px-4 text-[13px] tracking-normal sm:h-12 sm:text-sm">
-          <span className="sm:hidden">{pricing.ctaLabelShort}</span>
-          <span className="hidden sm:inline">{pricing.ctaLabel}</span>
+          {pricing.ctaLabelShort}
         </CheckoutButton>
       </div>
       <script dangerouslySetInnerHTML={{ __html: revealScript }} />
