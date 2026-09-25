@@ -3,20 +3,23 @@ import { pricing } from "@/lib/content";
 
 const revealScript = `
 (function () {
-  var bar = document.getElementById("checkout-bar");
-  var product = document.getElementById("produto");
-  if (!bar || !product) return;
-  var shown = false;
+  var reached = false;
   function check() {
-    if (shown) return;
-    if (product.getBoundingClientRect().top < window.innerHeight * 0.62) {
-      shown = true;
-      bar.classList.remove("pointer-events-none", "translate-y-full");
-      bar.setAttribute("aria-hidden", "false");
-    }
+    var bar = document.getElementById("checkout-bar");
+    var product = document.getElementById("produto");
+    if (!bar || !product) return;
+    var rect = product.getBoundingClientRect();
+    if (rect.height < 80) return;
+    if (!reached && rect.top < window.innerHeight * 0.72) reached = true;
+    if (!reached) return;
+    bar.classList.remove("pointer-events-none", "translate-y-full");
+    bar.setAttribute("aria-hidden", "false");
   }
   check();
+  document.addEventListener("DOMContentLoaded", check);
   window.addEventListener("scroll", check, { passive: true });
+  document.addEventListener("scroll", check, true);
+  setInterval(check, 300);
 })();
 `;
 
