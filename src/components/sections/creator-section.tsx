@@ -15,10 +15,10 @@ export function CreatorSection() {
           <Image
             src={creatorStory.photo}
             alt={creatorStory.photoAlt}
-            width={660}
-            height={880}
+            width={800}
+            height={1067}
             sizes="(max-width: 768px) 256px, 288px"
-            className="aspect-[3/4] w-full rounded-3xl border-4 border-card object-cover shadow-xl"
+            className="h-auto w-full rounded-3xl border-4 border-card shadow-xl"
             priority
           />
           <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1 text-center text-xs font-semibold text-muted-foreground shadow-sm">

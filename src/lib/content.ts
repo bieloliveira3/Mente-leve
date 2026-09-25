@@ -154,7 +154,7 @@ export const creatorStory = {
   name: "Dra. Aline",
   role: "Médica e idealizadora do Mente Leve",
   crm: "",
-  photo: "/images/creator/criadora.webp",
+  photo: "/images/creator/criadora-cerebro.webp",
   photoAlt:
     "Dra. Aline, médica e idealizadora do Mente Leve, segurando um modelo anatômico de cérebro",
   credentialBadge: "Atendimento clínico há mais de 10 anos",
