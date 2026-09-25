@@ -34,6 +34,7 @@ export function CreatorSection() {
           ))}
           <p className="font-semibold text-primary">
             — {creatorStory.name}, {creatorStory.role}
+            {creatorStory.crm ? ` • ${creatorStory.crm}` : ""}
           </p>
         </div>
       </div>

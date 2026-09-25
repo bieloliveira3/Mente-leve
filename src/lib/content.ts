@@ -146,14 +146,18 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-// ⚠️ Troque o nome, as credenciais e a foto pela pessoa real que assina o
-// produto. Credencial profissional é um dos maiores gatilhos de autoridade
-// deste nicho — mas só use se for verdadeira.
+// ⚠️ IMPORTANTE: o nome abaixo precisa bater com a pessoa da foto — no
+// jaleco da imagem está bordado "Dra. Aline Fre...". Complete o nome e o
+// sobrenome corretos e preencha o CRM (deixe `crm` vazio para não exibir).
+// Divulgação de serviço médico no Brasil exige identificação profissional,
+// e credencial real é o maior gatilho de autoridade deste nicho — nunca use
+// uma credencial que não seja verdadeira.
 export const creatorStory = {
-  name: "Dra. Marina A.",
+  name: "Dra. Aline",
   role: "Médica e idealizadora do Mente Leve",
-  photo: "/images/creator/criadora.png",
-  photoAlt: "Dra. Marina A., médica e idealizadora do Mente Leve",
+  crm: "",
+  photo: "/images/creator/criadora.webp",
+  photoAlt: "Dra. Aline, médica e idealizadora do Mente Leve",
   credentialBadge: "Atendimento clínico há mais de 10 anos",
   paragraphs: [
     "\"No consultório, eu ouvia a mesma frase quase todos os dias: 'eu sei o que preciso fazer, só não consigo começar'. E eu conhecia bem essa sensação — como adulta com TDAH, minha mesa foi por anos um mar de post-its e cadernos pela metade.\"",
