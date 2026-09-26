@@ -10,7 +10,7 @@
 export const brand = {
   name: "Mente Leve",
   tagline: "Planner Digital para Adultos com TDAH",
-  supportEmail: "contato@menteleveplanner.com",
+  supportEmail: "Mentelevecontato@protonmail.com",
 };
 
 export const hero = {

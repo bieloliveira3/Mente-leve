@@ -21,7 +21,7 @@ export type LegalDocument = {
 };
 
 const company = "Mente Leve";
-const supportEmail = "contato@menteleveplanner.com";
+const supportEmail = "Mentelevecontato@protonmail.com";
 
 export const legalDocuments: Record<string, LegalDocument> = {
   termos: {
