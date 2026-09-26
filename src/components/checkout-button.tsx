@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { checkoutBaseUrl } from "@/lib/content";
 import { buildCheckoutUrl } from "@/lib/checkout-url";
+import { trackInitiateCheckout } from "@/lib/meta-pixel";
 
 export function CheckoutButton({
   children,
@@ -28,6 +29,7 @@ export function CheckoutButton({
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noopener noreferrer" : undefined}
         onClick={(event) => {
+          trackInitiateCheckout();
           const finalUrl = buildCheckoutUrl(checkoutBaseUrl);
           if (finalUrl === checkoutBaseUrl) return;
           event.preventDefault();
