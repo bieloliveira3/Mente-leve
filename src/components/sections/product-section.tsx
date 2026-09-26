@@ -3,7 +3,7 @@ import { Section } from "@/components/layout/section";
 
 export function ProductSection() {
   return (
-    <Section id="bonus" className="bg-secondary/50">
+    <Section id="bonus">
       <h2 className="text-center font-heading text-3xl font-bold text-foreground sm:text-4xl">
         E mais 5 ebooks de bônus
       </h2>

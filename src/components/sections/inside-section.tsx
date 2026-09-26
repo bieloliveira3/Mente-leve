@@ -4,7 +4,7 @@ import { insidePages } from "@/lib/content";
 
 export function InsideSection() {
   return (
-    <Section id="conteudo">
+    <Section id="conteudo" className="bg-secondary/70">
       <h2 className="text-center font-heading text-3xl font-bold text-foreground sm:text-4xl">
         {insidePages.title}
       </h2>

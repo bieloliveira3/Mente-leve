@@ -3,7 +3,7 @@ import { painPoints } from "@/lib/content";
 
 export function PainSection() {
   return (
-    <Section id="identificacao" className="bg-card">
+    <Section id="identificacao">
       <h2 className="mx-auto max-w-xl text-center font-heading text-3xl font-bold leading-tight text-foreground sm:text-4xl">
         {painPoints.title}
       </h2>

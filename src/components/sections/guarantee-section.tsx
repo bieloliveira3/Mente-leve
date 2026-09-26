@@ -4,7 +4,7 @@ import { guarantee } from "@/lib/content";
 
 export function GuaranteeSection() {
   return (
-    <Section className="bg-secondary/60">
+    <Section>
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
           <ShieldCheck className="h-8 w-8" aria-hidden />

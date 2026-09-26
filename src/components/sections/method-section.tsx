@@ -3,7 +3,7 @@ import { method } from "@/lib/content";
 
 export function MethodSection() {
   return (
-    <Section id="metodo">
+    <Section id="metodo" className="bg-secondary/60">
       <h2 className="mx-auto max-w-2xl text-center font-heading text-3xl font-bold leading-tight text-foreground sm:text-4xl">
         {method.title}
       </h2>
