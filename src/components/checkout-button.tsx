@@ -19,7 +19,7 @@ export function CheckoutButton({
       asChild
       size="lg"
       className={cn(
-        "h-auto min-h-14 w-full animate-pulse whitespace-normal rounded-full px-5 py-3 text-center text-base font-bold uppercase leading-tight tracking-wide sm:text-lg",
+        "h-12 w-full animate-pulse rounded-full px-4 text-sm font-bold uppercase tracking-normal sm:h-14 sm:text-base",
         className
       )}
     >
@@ -38,7 +38,7 @@ export function CheckoutButton({
           }
         }}
       >
-        <span className="block max-w-full whitespace-normal text-balance">{children}</span>
+        <span className="whitespace-nowrap">{children}</span>
       </a>
     </Button>
   );

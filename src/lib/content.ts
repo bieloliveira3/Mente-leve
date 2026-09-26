@@ -300,7 +300,7 @@ export const pricing = {
     "Atualizações grátis para sempre",
   ],
   bonusSectionTitle: "Bônus inclusos",
-  ctaLabel: "Quero o Mente Leve por R$27,99",
+  ctaLabel: "Quero por R$27,99",
   ctaLabelShort: "Garantir agora",
   impactNote: "50% da sua compra vai para instituições de cuidado com TDAH",
   guaranteeNote: "🛡️ Garantia de 30 dias ou seu dinheiro de volta",

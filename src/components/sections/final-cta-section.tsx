@@ -13,7 +13,7 @@ export function FinalCtaSection() {
         <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-background/75 sm:text-base">
           {finalCta.text}
         </p>
-        <CheckoutButton className="mx-auto mt-8 h-auto min-h-12 max-w-md animate-none bg-primary py-3 text-primary-foreground hover:bg-primary/90 sm:min-h-14">
+        <CheckoutButton className="mx-auto mt-8 h-12 max-w-md animate-none bg-primary text-primary-foreground hover:bg-primary/90 sm:h-14">
           {pricing.ctaLabel}
         </CheckoutButton>
       </div>
