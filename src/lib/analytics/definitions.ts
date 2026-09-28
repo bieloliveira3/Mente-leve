@@ -15,7 +15,6 @@ export const sections = {
 export type SectionKey = keyof typeof sections;
 
 export const ctas = {
-  header_offer: { location: "header", section: "header", text: "ver_oferta" },
   hero_offer: { location: "hero", section: "hero", text: "quero_mente_leve" },
   pricing_checkout: { location: "oferta", section: "oferta", text: "comprar_planner" },
   final_checkout: { location: "cta_final", section: "cta_final", text: "comprar_planner" },
@@ -26,7 +25,7 @@ export const ctas = {
   footer_privacy: { location: "footer", section: "footer", text: "privacidade" },
   footer_refund: { location: "footer", section: "footer", text: "reembolso" },
   footer_support: { location: "footer", section: "footer", text: "suporte" },
-  whatsapp_support: { location: "flutuante", section: "suporte", text: "whatsapp" },
+  whatsapp_support: { location: "header", section: "header", text: "suporte" },
 } as const;
 
 export type CtaId = keyof typeof ctas;

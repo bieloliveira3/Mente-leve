@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import { MetaPixel } from "@/components/meta-pixel";
 import { LandingAnalytics } from "@/components/landing-analytics";
-import { WhatsAppSupport } from "@/components/whatsapp-support";
 import "./globals.css";
 
 const inter = Inter({
@@ -32,7 +31,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <MetaPixel />
         <LandingAnalytics />
         {children}
-        <WhatsAppSupport />
       </body>
     </html>
   );

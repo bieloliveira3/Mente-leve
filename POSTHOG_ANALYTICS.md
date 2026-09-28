@@ -13,7 +13,7 @@ O wizard oficial `npx -y @posthog/wizard@latest` foi executado (v2.78.0): detect
 - Rotas: `/`, `/checkout`, `/termos`, `/privacidade`, `/reembolso`. `/checkout` é uma página de instruções/configuração, **não um checkout real**.
 - Variáveis `NEXT_PUBLIC_*` são incorporadas no frontend durante `next build`; `.env.local` fica na raiz e é ignorado pelo Git.
 - Fonte de copy/oferta: `src/lib/content.ts`. Preço apresentado: **R$ 27,99**, BRL. Destino padrão: `https://pay.cakto.com.br/3am8wy3_1137980`, substituível por `NEXT_PUBLIC_CHECKOUT_URL`.
-- Três links de pagamento usam CheckoutButton: oferta, CTA final, barra fixa. Header e hero navegam para `#pricing`; outros links são início, documentos, e-mail de suporte e o botão flutuante do WhatsApp.
+- Três links de pagamento usam CheckoutButton: oferta, CTA final, barra fixa. O hero navega para `#pricing`. O header abre o WhatsApp de suporte. Os outros links são início, documentos e e-mail.
 - Meta Pixel existente **1344965854179273**, PageView/InitiateCheckout, foi preservado integralmente. Não foram encontrados GA, GTM, Clarity ou outro tracker no código.
 - A barra fixa já existe e é revelada após o hero; também aparece no desktop. Sua lógica original não foi refatorada.
 - Sem CMP/banner/mecanismo de consentimento. A política de privacidade já menciona cookies e mensuração, mas requer revisão operacional antes de ativar coleta/replay.
@@ -104,7 +104,6 @@ O wrapper Section obtém dados semânticos do registro central. Seções não re
 
 | cta_id | cta_location | section_id | Destino/função |
 | --- | --- | --- | --- |
-| `header_offer` | `header` | `header` | `#pricing` |
 | `hero_offer` | `hero` | `hero` | `#pricing` |
 | `pricing_checkout` | `oferta` | `oferta` | Checkout Cakto/configurado |
 | `final_checkout` | `cta_final` | `cta_final` | Checkout Cakto/configurado |
@@ -115,7 +114,7 @@ O wrapper Section obtém dados semânticos do registro central. Seções não re
 | `footer_privacy` | `footer` | `footer` | `/privacidade` |
 | `footer_refund` | `footer` | `footer` | `/reembolso` |
 | `footer_support` | `footer` | `footer` | Email existente; analytics registra `mailto:support` |
-| `whatsapp_support` | `flutuante` | `suporte` | WhatsApp de suporte; não é checkout |
+| `whatsapp_support` | `header` | `header` | WhatsApp de suporte; não é checkout |
 
 As cinco ações comerciais são as duas de oferta e as três de checkout. Os outros links têm IDs para análise de navegação. FAQ permanece funcionando e seus controles são cobertos pelo autocapture, sem transformá-los em CTAs de compra.
 
@@ -283,7 +282,7 @@ No console, `[analytics]` mostra cada evento e `window.__menteLeveAnalyticsDebug
 | Scroll | Descer até 25/50/75/90/fim, depois repetir | Uma ocorrência de cada marco por visita |
 | Seções | Parar 600 ms em cada seção | section_view com ID/nome/ordem corretos, sem repetição |
 | CTA impression | Expor metade do CTA por 600 ms | Uma impressão; barra escondida não conta |
-| CTA click | Clicar hero/header | cta_click com ID, âncora e profundidade; navegação intacta |
+| CTA click | Clicar hero | cta_click com ID, âncora e profundidade; navegação intacta. O header abre o WhatsApp |
 | Checkout click | Clicar oferta/final/barra | cta_click + checkout_click; Cakto abre normalmente com UTMs |
 | Atribuição | Ir para política de privacidade e voltar, depois recarregar | Campanha inicial permanece na mesma sessão |
 | Privacy | Inspecionar eventos e código/configuração | Sem email/senha/CPF/query arbitrária; replay mascarado |
