@@ -28,6 +28,9 @@ export function Hero() {
           <p className="mx-auto max-w-xl text-sm leading-relaxed text-muted-foreground md:mx-0 sm:text-lg">
             {hero.subheadline}
           </p>
+          <p className="mx-auto mt-3 max-w-xl text-sm font-medium leading-relaxed text-foreground md:mx-0 sm:text-base">
+            {hero.methodLine}
+          </p>
           <Button
             asChild
             className="mt-5 h-12 w-full max-w-sm rounded-full px-8 text-base font-bold sm:mt-6 sm:h-14 sm:w-auto sm:px-10 sm:text-lg"

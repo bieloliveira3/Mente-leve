@@ -20,6 +20,7 @@ export const hero = {
   headlineAccent: "O Mente Leve transforma esse caos em um caminho claro.",
   subheadline:
     "Para adultos com TDAH ou dificuldade de foco e rotina, sem mais uma lista impossível.",
+  methodLine: "Tire o que está na cabeça, deixe visual e escolha o próximo passo.",
   cta: "Quero o Mente Leve",
 };
 
@@ -331,7 +332,8 @@ export const pricing = {
   currentPrice: "R$ 27",
   currentPriceCents: "99",
   offerLabel: "Oferta de lançamento",
-  usageLine: "Sem data fixa, poucas coisas por vez. Se o dia sair do eixo, é só voltar.",
+  usageLine:
+    "Tire da cabeça, deixe visual e escolha pouco. Sem data fixa: se o dia sair do eixo, é só voltar.",
   scarcityNote: "Essa condição promocional pode sair do ar a qualquer momento.",
   pageCountNote: "Planner com mais de 150 páginas",
   features: [
