@@ -5,13 +5,16 @@ import { cn } from "@/lib/utils";
 import { checkoutBaseUrl } from "@/lib/content";
 import { buildCheckoutUrl } from "@/lib/checkout-url";
 import { trackInitiateCheckout } from "@/lib/meta-pixel";
+import { ctaAttributes, type CtaId } from "@/lib/analytics/definitions";
 
 export function CheckoutButton({
   children,
   className,
+  analyticsId,
 }: {
   children: React.ReactNode;
   className?: string;
+  analyticsId: CtaId;
 }) {
   const isExternal = !checkoutBaseUrl.startsWith("/");
 
@@ -25,6 +28,8 @@ export function CheckoutButton({
       )}
     >
       <a
+        {...ctaAttributes(analyticsId)}
+        data-analytics-checkout="true"
         href={checkoutBaseUrl}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noopener noreferrer" : undefined}

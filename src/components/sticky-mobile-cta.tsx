@@ -45,7 +45,7 @@ export function StickyCheckoutBar() {
             {pricing.discountBadge}
           </span>
         </div>
-        <CheckoutButton className="h-11 w-auto min-w-0 flex-1 animate-none px-4 text-[13px] tracking-normal sm:h-12 sm:text-sm">
+        <CheckoutButton analyticsId="sticky_checkout" className="h-11 w-auto min-w-0 flex-1 animate-none px-4 text-[13px] tracking-normal sm:h-12 sm:text-sm">
           {pricing.ctaLabelShort}
         </CheckoutButton>
       </div>

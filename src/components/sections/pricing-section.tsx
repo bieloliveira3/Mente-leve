@@ -49,7 +49,7 @@ export function PricingSection() {
         <p className="mt-5 text-center text-sm text-muted-foreground">
           Pagamento único · Acesso imediato · Garantia de 30 dias
         </p>
-        <CheckoutButton className="mt-5 animate-none">{pricing.ctaLabel}</CheckoutButton>
+        <CheckoutButton analyticsId="pricing_checkout" className="mt-5 animate-none">{pricing.ctaLabel}</CheckoutButton>
       </div>
     </Section>
   );

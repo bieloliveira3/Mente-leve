@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import { MetaPixel } from "@/components/meta-pixel";
+import { LandingAnalytics } from "@/components/landing-analytics";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <MetaPixel />
+        <LandingAnalytics />
         {children}
       </body>
     </html>
