@@ -32,10 +32,11 @@ function Icon({ className, children, ...props }: SVGProps<SVGSVGElement>) {
 
 function HeadIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <Icon {...props}>
-      <path d="M16.2 19.8V17c0-1.5-.7-2.6-1.9-3.3 1.6-.8 2.7-2.4 2.7-4.3C17 6.2 14.7 4 11.8 4 9.6 4 7.7 5.2 6.8 7" />
-      <path d="M8.2 10.2c.5.5 1.2.7 1.9.5" />
-      <path d="M8.6 19.8h5.6" />
+    <Icon strokeWidth={1.5} {...props}>
+      <path d="M14.8 20.2V16.2C14.8 15 16 13.8 15.8 12.2 15.4 9.6 13.2 7.2 10.6 7.6 8.4 8 7 10 7.4 12.2c.2 1 .8 1.8 1.6 2.3" />
+      <path d="M16.6 11.2c.6 1.2.4 2.6-.4 3.6-.6.8-1 1.8-1 2.8v2.6" />
+      <path d="M9.2 11.6c.5.4 1.1.3 1.5-.1" />
+      <path d="M9 20.2h6.2" />
     </Icon>
   );
 }
@@ -60,13 +61,12 @@ function HomeIcon(props: SVGProps<SVGSVGElement>) {
 
 function LotusIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <Icon {...props}>
-      <path d="M12 20.2c0-3 1.5-5.4 1.5-5.4s1.5 2.4 1.5 5.4" />
-      <path d="M12 20.2c0-4-2-7-2-7s-2 3-2 7" />
-      <path d="M12 20.2V9" />
-      <path d="M12 14c2-.9 3.8-.4 5 .8" />
-      <path d="M12 14c-2-.9-3.8-.4-5 .8" />
-      <path d="M8.4 20.2h7.2" />
+    <Icon strokeWidth={1.5} {...props}>
+      <path d="M12 20V10" />
+      <path d="M12 18c-2.2-1.2-4.2-.2-4.6 2" />
+      <path d="M12 18c2.2-1.2 4.2-.2 4.6 2" />
+      <path d="M12 15c-1.6-2.4-1.2-5 .2-6.4" />
+      <path d="M12 15c1.6-2.4 1.2-5-.2-6.4" />
     </Icon>
   );
 }
