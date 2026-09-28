@@ -75,7 +75,7 @@ Todos os eventos customizados levam `page`, `pathname`, `environment`, `device_t
 | `section_view` | Seção efetivamente exposta por 600 ms | `section_id`, `section_name`, `section_order` |
 | `cta_impression` | CTA efetivamente exposto | `cta_id`, `cta_location`, `cta_text` normalizado, `section_id`, `destination` saneado |
 | `cta_click` | Clique normal, teclado/Enter ou botão central em CTA | Propriedades de impressão, `scroll_percentage_at_click`, `had_impression` |
-| `checkout_click` | Clique em um dos três links de pagamento, antes do handler original | Propriedades de clique, `checkout_url` sem query, `product`, `price: 27.99`, `currency: BRL`, UTMs |
+| `checkout_click` | Clique em um dos quatro links de pagamento, antes do handler original | Propriedades de clique, `checkout_url` sem query, `product`, `price: 27.99`, `currency: BRL`, UTMs |
 | `$pageleave` | Saída/ocultação detectada pelo SDK | Métricas de scroll do SDK, `max_scroll_percentage`, `last_section_id`, campanha/contexto |
 | `$autocapture` e eventos de UX do SDK | Cliques permitidos/autocapturados | Textos e atributos mascarados; rage/dead clicks habilitados |
 
@@ -92,7 +92,7 @@ Todos os eventos customizados levam `page`, `pathname`, `environment`, `device_t
 | 3 | `identificacao` | Identificação com o problema | `identificacao` |
 | 4 | `mensagens` | Mensagens de quem usa | `mensagens` |
 | 5 | `metodo` | Método de organização | `metodo` |
-| 6 | `bonus` | Ebooks de bônus | `bonus` |
+| 6 | `bonus` | Bônus inclusos | `bonus` |
 | 7 | `criadora` | Criadora | `criadora` |
 | 8 | `garantia` | Garantia | Sem alteração da âncora/markup existente |
 | 9 | `faq` | Antes de decidir | `faq` |
@@ -106,6 +106,7 @@ O wrapper Section obtém dados semânticos do registro central. Seções não re
 | --- | --- | --- | --- |
 | `hero_offer` | `hero` | `hero` | `#pricing` |
 | `pricing_checkout` | `oferta` | `oferta` | Checkout Cakto/configurado |
+| `bonus_checkout` | `bonus` | `bonus` | Checkout Cakto/configurado, o mesmo destino do CTA principal |
 | `final_checkout` | `cta_final` | `cta_final` | Checkout Cakto/configurado |
 | `sticky_checkout` | `barra_fixa` | `sticky_bar` | Checkout Cakto/configurado |
 | `header_home` | `header` | `header` | `/#top` |
@@ -116,7 +117,7 @@ O wrapper Section obtém dados semânticos do registro central. Seções não re
 | `footer_support` | `footer` | `footer` | Email existente; analytics registra `mailto:support` |
 | `whatsapp_support` | `header` | `header` | WhatsApp de suporte; não é checkout |
 
-As cinco ações comerciais são as duas de oferta e as três de checkout. Os outros links têm IDs para análise de navegação. FAQ permanece funcionando e seus controles são cobertos pelo autocapture, sem transformá-los em CTAs de compra.
+As ações comerciais são o convite da apresentação e os quatro links de checkout. Os outros links têm IDs para análise de navegação. FAQ permanece funcionando e seus controles são cobertos pelo autocapture, sem transformá-los em CTAs de compra.
 
 Impressão requer **ao menos 50% da área do CTA visível por 600 ms**, aba visível, ausência de `aria-hidden` e verificação de oclusão no ponto central. A barra fixa escondida não conta. Um clique real no CTA visível também confirma exposição se acontecer antes dos 600 ms. Cada ID gera uma impressão por visita, mesmo com vários scrolls. Cliques repetidos são eventos reais, mas CTR deve usar usuários/sessões únicos.
 
@@ -283,7 +284,7 @@ No console, `[analytics]` mostra cada evento e `window.__menteLeveAnalyticsDebug
 | Seções | Parar 600 ms em cada seção | section_view com ID/nome/ordem corretos, sem repetição |
 | CTA impression | Expor metade do CTA por 600 ms | Uma impressão; barra escondida não conta |
 | CTA click | Clicar hero | cta_click com ID, âncora e profundidade; navegação intacta. O header abre o WhatsApp |
-| Checkout click | Clicar oferta/final/barra | cta_click + checkout_click; Cakto abre normalmente com UTMs |
+| Checkout click | Clicar oferta/bônus/final/barra | cta_click + checkout_click; Cakto abre normalmente com UTMs |
 | Atribuição | Ir para política de privacidade e voltar, depois recarregar | Campanha inicial permanece na mesma sessão |
 | Privacy | Inspecionar eventos e código/configuração | Sem email/senha/CPF/query arbitrária; replay mascarado |
 | Replay real | Usar um projeto de testes com captura ativada | Gravação aparece e pode ser reproduzida no PostHog |

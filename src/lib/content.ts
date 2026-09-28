@@ -198,6 +198,42 @@ export const bonuses: Bonus[] = [
   },
 ];
 
+export const bonusShowcase = {
+  title: "E você ainda leva 5 bônus para deixar sua rotina mais leve",
+  subtitle:
+    "Além do Planner Mente Leve, você recebe ferramentas práticas para organização, emoções, bem-estar e autoconhecimento.",
+  items: [
+    {
+      title: "Guia Explorar o TDAH",
+      description: "Entenda melhor seu funcionamento e encontre estratégias para sua rotina.",
+      icon: "brain",
+    },
+    {
+      title: "Mapa das Emoções",
+      description: "Uma ferramenta visual para identificar e organizar o que você está sentindo.",
+      icon: "heart",
+    },
+    {
+      title: "Checklist Casa em Ordem",
+      description: "Divida as tarefas e tire a organização da casa da cabeça.",
+      icon: "home",
+    },
+    {
+      title: "Workbook de Bem-Estar",
+      description: "Exercícios simples para cuidar de você e da sua rotina.",
+      icon: "leaf",
+    },
+    {
+      title: "Diário Padrões e Progresso",
+      description: "Acompanhe hábitos, perceba padrões e reconheça sua evolução.",
+      icon: "journal",
+    },
+  ],
+  closing: "5 ferramentas extras. Um único acesso.",
+  note: "Tudo pensado para complementar o Mente Leve sem complicar sua rotina.",
+  cta: "Quero receber o Mente Leve + bônus",
+} as const;
+
 export type Testimonial = {
   quote: string;
   author: string;

@@ -5,7 +5,7 @@ export const sections = {
   identificacao: { id: "identificacao", name: "Identificação com o problema", order: 3 },
   mensagens: { id: "mensagens", name: "Mensagens de quem usa", order: 4 },
   metodo: { id: "metodo", name: "Método de organização", order: 5 },
-  bonus: { id: "bonus", name: "Ebooks de bônus", order: 6 },
+  bonus: { id: "bonus", name: "Bônus inclusos", order: 6 },
   criadora: { id: "criadora", name: "Criadora", order: 7 },
   garantia: { id: "garantia", name: "Garantia", order: 8 },
   faq: { id: "faq", name: "Antes de decidir", order: 9 },
@@ -17,6 +17,7 @@ export type SectionKey = keyof typeof sections;
 export const ctas = {
   hero_offer: { location: "hero", section: "hero", text: "quero_mente_leve" },
   pricing_checkout: { location: "oferta", section: "oferta", text: "comprar_planner" },
+  bonus_checkout: { location: "bonus", section: "bonus", text: "mente_leve_bonus" },
   final_checkout: { location: "cta_final", section: "cta_final", text: "comprar_planner" },
   sticky_checkout: { location: "barra_fixa", section: "sticky_bar", text: "garantir_agora" },
   header_home: { location: "header", section: "header", text: "inicio" },
