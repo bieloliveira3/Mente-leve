@@ -18,10 +18,10 @@ export function PainSection() {
         </h2>
       </div>
       <ul className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
-        {painPoints.items.map((item) => (
+        {painPoints.items.map((item, index) => (
           <li
             key={item}
-            className="rounded-2xl border border-border/80 bg-background px-4 py-3 text-sm leading-snug text-foreground sm:text-base"
+            className={`rounded-2xl px-4 py-3 text-sm leading-snug text-foreground sm:text-base ${index % 2 === 0 ? "bg-secondary" : "bg-accent"}`}
           >
             {item}
           </li>
