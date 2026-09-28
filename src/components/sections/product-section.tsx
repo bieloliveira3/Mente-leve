@@ -20,24 +20,25 @@ const referenceIcons = {
   calendar: { src: "/images/bonus/icone-calendario.png", width: 39, height: 37 },
 } as const;
 
-function Leaves({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 220 280" aria-hidden="true" className={className}>
-      <path d="M28 248C78 226 102 172 120 108" fill="none" stroke="#6d8b66" strokeWidth="1.4" />
-      <path d="M118 114c22-8 40 0 50 18-26 4-42 0-50-18z" fill="#86a07c" />
-      <path d="M106 146c-24-4-40 8-48 28 22-6 38-14 48-28z" fill="#7d9674" />
-      <path d="M130 86c20-16 42-18 56-8-22 0-40 6-56 8z" fill="#93aa86" />
-      <path d="M84 186c-20 6-34 20-40 36 20-10 34-20 40-36z" fill="#7a9472" />
-      <path d="M140 64c12-22 32-34 50-36-18 12-34 24-50 36z" fill="#8aa582" />
-    </svg>
-  );
-}
-
 export function ProductSection() {
   return (
     <Section id="bonus" className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-24">
-      <Leaves className="pointer-events-none absolute -top-6 -left-10 h-40 w-32 text-[#7f967c]/45 sm:-left-6 sm:h-52 sm:w-40 lg:-left-2 lg:h-64 lg:w-52" />
-      <Leaves className="pointer-events-none absolute -right-12 -bottom-8 h-40 w-32 rotate-180 text-[#7f967c]/40 sm:-right-6 sm:h-52 sm:w-40 lg:right-0 lg:h-64 lg:w-52" />
+      <Image
+        src="/images/bonus/planta-topo.png"
+        alt=""
+        width={106}
+        height={169}
+        unoptimized
+        className="pointer-events-none absolute -top-1 -left-8 h-28 w-auto sm:-left-4 sm:h-40 lg:-left-2 lg:h-56"
+      />
+      <Image
+        src="/images/bonus/planta-base.png"
+        alt=""
+        width={87}
+        height={179}
+        unoptimized
+        className="pointer-events-none absolute -right-6 -bottom-2 h-28 w-auto sm:-right-2 sm:h-40 lg:right-0 lg:h-56"
+      />
 
       <div className="relative mx-auto max-w-2xl text-center">
         <Image
