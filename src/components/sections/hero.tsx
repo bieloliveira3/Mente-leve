@@ -34,7 +34,6 @@ export function Hero() {
           >
             <a {...ctaAttributes("hero_offer")} id="hero-cta" href="#pricing">{hero.cta}</a>
           </Button>
-          <p className="mt-4 text-sm text-muted-foreground">{hero.trustLine}</p>
         </div>
       </div>
     </Section>

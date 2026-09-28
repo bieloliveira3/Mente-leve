@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE_PATH || 'playwright');
 const base = process.env.ANALYTICS_TEST_URL || 'http://127.0.0.1:3100';
-const expectedCtas = ['header_offer','hero_offer','pricing_checkout','restart_checkout','final_checkout','sticky_checkout','header_home','footer_home','footer_terms','footer_privacy','footer_refund','footer_support'];
+const expectedCtas = ['header_offer','hero_offer','pricing_checkout','final_checkout','sticky_checkout','header_home','footer_home','footer_terms','footer_privacy','footer_refund','footer_support'];
 
 (async () => {
   const browser = await chromium.launch({ headless: true, channel: process.env.PLAYWRIGHT_CHANNEL || 'chrome' });
@@ -32,7 +32,7 @@ const expectedCtas = ['header_offer','hero_offer','pricing_checkout','restart_ch
     assert.equal((await events()).filter(e=>e.event==='landing_view').length,1);
     const ctas = await page.locator('[data-analytics-id]').evaluateAll(elements=>elements.map(el=>el.dataset.analyticsId));
     assert.deepEqual([...ctas].sort(),[...expectedCtas].sort());
-    assert.equal(await page.locator('[data-analytics-section]').count(),10);
+    assert.equal(await page.locator('[data-analytics-section]').count(),9);
     assert.equal((await events()).filter(e=>e.properties.cta_id==='sticky_checkout').length,0,'Hidden bar must not generate impressions');
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'No horizontal overflow');
 
@@ -64,8 +64,8 @@ const expectedCtas = ['header_offer','hero_offer','pricing_checkout','restart_ch
     await page.waitForTimeout(700);
     let captured = await events();
     assert.deepEqual(captured.filter(e=>e.event==='scroll_depth').map(e=>e.properties.percentage).sort((a,b)=>a-b),[25,50,75,90,100]);
-    assert.equal(captured.filter(e=>e.event==='section_view').length,10);
-    assert.equal(new Set(captured.filter(e=>e.event==='section_view').map(e=>e.properties.section_id)).size,10);
+    assert.equal(captured.filter(e=>e.event==='section_view').length,9);
+    assert.equal(new Set(captured.filter(e=>e.event==='section_view').map(e=>e.properties.section_id)).size,9);
 
     // Existing FAQ still works; its interaction remains autocaptured when configured.
     const faq = page.locator('#faq button').first();
@@ -73,7 +73,7 @@ const expectedCtas = ['header_offer','hero_offer','pricing_checkout','restart_ch
     await faq.click();
     assert.equal(await faq.getAttribute('aria-expanded'),'true');
 
-    for (const id of ['pricing_checkout','restart_checkout','final_checkout','sticky_checkout']) {
+    for (const id of ['pricing_checkout','final_checkout','sticky_checkout']) {
       const cta = page.locator(`[data-analytics-id="${id}"]`);
       await cta.scrollIntoViewIfNeeded();
       await page.waitForTimeout(750);
@@ -92,7 +92,7 @@ const expectedCtas = ['header_offer','hero_offer','pricing_checkout','restart_ch
     for(const id of expectedCtas) {
       assert.equal(captured.filter(e=>e.event==='cta_impression'&&e.properties.cta_id===id).length,1,`${id}: one real impression`);
     }
-    assert.equal(captured.filter(e=>e.event==='checkout_click').length,4);
+    assert.equal(captured.filter(e=>e.event==='checkout_click').length,3);
     assert.ok(captured.filter(e=>e.event==='checkout_click').every(e=>e.properties.price===27.99 && e.properties.currency==='BRL'));
     assert.equal(captured.filter(e=>['purchase','checkout_view'].includes(e.event)).length,0);
     assert.ok(captured.every(e=>e.properties.utm_source==='facebook'&&e.properties.utm_content==='ad_01'));
@@ -115,7 +115,7 @@ const expectedCtas = ['header_offer','hero_offer','pricing_checkout','restart_ch
     await page.reload({waitUntil:'networkidle'});
     assert.equal((await events()).filter(e=>e.event==='landing_view').length,1,'One landing event after reload');
     assert.equal((await events()).find(e=>e.event==='landing_view').properties.utm_content,'ad_01');
-    report.push({device:name,sections:10,ctas:12,milestones:[25,50,75,90,100],checkoutClicks:4,errors,posthogRequests:posthogRequests.length,baseline:!!process.env.ANALYTICS_BASELINE_DIR});
+    report.push({device:name,sections:9,ctas:11,milestones:[25,50,75,90,100],checkoutClicks:3,errors,posthogRequests:posthogRequests.length,baseline:!!process.env.ANALYTICS_BASELINE_DIR});
     console.log(`${name}: all analytics and navigation assertions passed`);
     await context.close();
   }

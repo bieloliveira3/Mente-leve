@@ -19,27 +19,6 @@ export const hero = {
   subheadline:
     "Para adultos com TDAH ou dificuldade de foco e rotina, sem mais uma lista impossível.",
   cta: "Quero o Mente Leve",
-  trustLine: "Pagamento único • Acesso imediato • Garantia de 30 dias",
-};
-
-export const restart = {
-  title: "Se o último planner parou na primeira semana, o problema não foi você.",
-  note: "O que costuma quebrar é um sistema que trata um dia perdido como fracasso.",
-  points: [
-    {
-      title: "Um dia perdido não zera tudo",
-      description: "Não há data impressa cobrando o dia que passou. Você continua na próxima página em branco.",
-    },
-    {
-      title: "O dia pede três coisas",
-      description: "Lista de trinta itens é o que impede de começar. Aqui o combinado é pouco, de propósito.",
-    },
-    {
-      title: "Parar já está previsto",
-      description: "Se a semana escapar, você não rasga nada e não recomeça o mês. Você só volta.",
-    },
-  ],
-  close: "Pagamento único. 30 dias para ver se faz sentido para você.",
 };
 
 export const painPoints = {
@@ -93,7 +72,7 @@ export const differentials = {
 export const finalCta = {
   title: "Menos caos na cabeça.",
   titleAccent: "Mais clareza para o próximo passo.",
-  text: "Um planner para usar no seu ritmo, com pagamento único e 30 dias para decidir se faz sentido.",
+  text: "Um planner para usar no seu ritmo.",
 };
 
 export const scienceSection = {
