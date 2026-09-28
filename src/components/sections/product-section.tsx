@@ -1,6 +1,5 @@
 import { Fraunces } from "next/font/google";
 import Image from "next/image";
-import type { SVGProps } from "react";
 import { CheckoutButton } from "@/components/checkout-button";
 import { Section } from "@/components/layout/section";
 import { bonusShowcase } from "@/lib/content";
@@ -13,61 +12,12 @@ const display = Fraunces({
   display: "swap",
 });
 
-function Icon({ className, children, ...props }: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.35"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      className={className}
-      {...props}
-    >
-      {children}
-    </svg>
-  );
-}
-
-function HeartIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <Icon {...props}>
-      <path d="M12 18.6s-5.4-3.3-5.4-7.1c0-1.8 1.4-3.2 3.1-3.2 1 0 1.8.5 2.3 1.2.5-.7 1.3-1.2 2.3-1.2 1.7 0 3.1 1.4 3.1 3.2 0 3.8-5.4 7.1-5.4 7.1z" />
-    </Icon>
-  );
-}
-
-function HomeIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <Icon {...props}>
-      <path d="M4.8 11.2 12 5.2l7.2 6" />
-      <path d="M7.2 10.2V18.4h9.6V10.2" />
-      <path d="M10.4 18.4v-4.2h3.2v4.2" />
-    </Icon>
-  );
-}
-
-function CalendarIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <Icon {...props}>
-      <rect x="4.5" y="5.4" width="15" height="14" rx="2" />
-      <path d="M8 3.8v3.2M16 3.8v3.2M4.5 9.6h15" />
-      <path d="M8.2 13.2h.1M12 13.2h.1M15.8 13.2h.1M8.2 16.2h.1M12 16.2h.1" />
-    </Icon>
-  );
-}
-
-const icons = {
-  heart: HeartIcon,
-  home: HomeIcon,
-  calendar: CalendarIcon,
-};
-
 const referenceIcons = {
   head: { src: "/images/bonus/icone-cabeca.png", width: 39, height: 40 },
+  heart: { src: "/images/bonus/icone-coracao.png", width: 39, height: 37 },
+  home: { src: "/images/bonus/icone-casa.png", width: 40, height: 34 },
   lotus: { src: "/images/bonus/icone-lotus.png", width: 40, height: 40 },
+  calendar: { src: "/images/bonus/icone-calendario.png", width: 39, height: 37 },
 } as const;
 
 function Leaves({ className }: { className?: string }) {
@@ -121,8 +71,7 @@ export function ProductSection() {
 
       <ul className="relative mx-auto mt-12 grid max-w-lg grid-cols-1 gap-4 sm:mt-14 lg:mt-16 lg:max-w-none lg:grid-cols-6 lg:gap-5">
         {bonusShowcase.items.map((item, index) => {
-          const reference = item.icon === "head" || item.icon === "lotus" ? referenceIcons[item.icon] : null;
-          const ItemIcon = item.icon === "head" || item.icon === "lotus" ? null : icons[item.icon];
+          const reference = referenceIcons[item.icon];
           return (
             <li
               key={item.number}
@@ -132,20 +81,14 @@ export function ProductSection() {
                 index === 3 && "lg:col-start-2",
               )}
             >
-              {reference ? (
-                <Image
-                  src={reference.src}
-                  alt=""
-                  width={reference.width}
-                  height={reference.height}
-                  unoptimized
-                  className="h-12 w-12"
-                />
-              ) : (
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-foreground">
-                  {ItemIcon ? <ItemIcon className="h-5 w-5" /> : null}
-                </span>
-              )}
+              <Image
+                src={reference.src}
+                alt=""
+                width={reference.width}
+                height={reference.height}
+                unoptimized
+                className="h-12 w-12 object-contain"
+              />
               <p className="mt-4 text-[11px] font-medium tracking-[0.22em] text-foreground/55">
                 {item.number}
               </p>
