@@ -116,6 +116,7 @@ O wrapper Section obtém dados semânticos do registro central. Seções não re
 | `footer_refund` | `footer` | `footer` | `/reembolso` |
 | `footer_support` | `footer` | `footer` | Email existente; analytics registra `mailto:support` |
 | `whatsapp_support` | `header` | `header` | WhatsApp de suporte; não é checkout |
+| `reviews_whatsapp` | `mensagens` | `mensagens` | WhatsApp de suporte, abaixo das avaliações; não é checkout |
 
 As ações comerciais são o convite da apresentação e os quatro links de checkout. Os outros links têm IDs para análise de navegação. FAQ permanece funcionando e seus controles são cobertos pelo autocapture, sem transformá-los em CTAs de compra.
 

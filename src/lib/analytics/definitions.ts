@@ -27,6 +27,7 @@ export const ctas = {
   footer_refund: { location: "footer", section: "footer", text: "reembolso" },
   footer_support: { location: "footer", section: "footer", text: "suporte" },
   whatsapp_support: { location: "header", section: "header", text: "suporte" },
+  reviews_whatsapp: { location: "mensagens", section: "mensagens", text: "fale_conosco" },
 } as const;
 
 export type CtaId = keyof typeof ctas;
