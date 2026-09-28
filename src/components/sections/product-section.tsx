@@ -29,15 +29,15 @@ export function ProductSection() {
         width={106}
         height={169}
         unoptimized
-        className="pointer-events-none absolute -top-1 -left-8 h-28 w-auto sm:-left-4 sm:h-40 lg:-left-2 lg:h-56"
+        className="pointer-events-none absolute top-0 left-0 h-44 w-auto sm:h-52 lg:h-64"
       />
       <Image
         src="/images/bonus/planta-base.png"
         alt=""
         width={87}
-        height={179}
+        height={178}
         unoptimized
-        className="pointer-events-none absolute -right-6 -bottom-2 h-28 w-auto sm:-right-2 sm:h-40 lg:right-0 lg:h-56"
+        className="pointer-events-none absolute right-0 bottom-0 h-44 w-auto sm:h-52 lg:h-64"
       />
 
       <div className="relative mx-auto max-w-2xl text-center">
