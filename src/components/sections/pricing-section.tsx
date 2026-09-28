@@ -7,8 +7,9 @@ import { bonuses, painPoints, pricing } from "@/lib/content";
 export function PricingSection() {
   return (
     <Section id="pricing" className="scroll-mt-28 text-center">
-      <p className="text-sm font-semibold text-primary sm:text-base">{painPoints.title}</p>
-      <h2 className="mt-2 font-heading text-3xl font-bold text-foreground sm:text-4xl">A oferta</h2>
+      <h2 className="mx-auto max-w-md font-heading text-2xl font-bold leading-tight text-primary sm:text-3xl">
+        {painPoints.title}
+      </h2>
       <div className="relative mx-auto mt-8 w-full max-w-md rounded-[2rem] border border-primary/40 bg-card p-6 text-left shadow-lg sm:p-8">
         <span className="absolute -top-3 right-6 rounded-full bg-gold px-3 py-1 text-xs font-bold text-foreground">
           {pricing.discountBadge}
