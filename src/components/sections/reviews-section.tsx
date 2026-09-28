@@ -5,7 +5,7 @@ import { reviews, supportWhatsApp } from "@/lib/content";
 
 export function ReviewsSection() {
   return (
-    <Section id="mensagens">
+    <Section id="mensagens" className="pb-6 sm:pb-8">
       <h2 className="mx-auto max-w-xl text-center font-heading text-3xl font-bold leading-tight text-foreground sm:text-4xl">
         {reviews.title}
       </h2>

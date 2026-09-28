@@ -6,7 +6,7 @@ import { bonuses, painPoints, pricing } from "@/lib/content";
 
 export function PricingSection() {
   return (
-    <Section id="pricing" className="scroll-mt-28 text-center">
+    <Section id="pricing" className="scroll-mt-28 pt-2 text-center sm:pt-4">
       <h2 className="mx-auto max-w-md font-heading text-2xl font-bold leading-tight text-primary sm:text-3xl">
         {painPoints.title}
       </h2>
