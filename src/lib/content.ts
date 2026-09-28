@@ -73,6 +73,56 @@ export const method = {
   ],
 };
 
+export const realPages = {
+  title: "Veja a folha antes de decidir.",
+  subtitle:
+    "Uma página real do Mente Leve e uma de cada bônus. É o material que chega no seu acesso.",
+  items: [
+    {
+      src: "/images/paginas/planner-dia.webp",
+      kicker: "Planner Mente Leve",
+      title: "Dia de três coisas",
+      description: "Uma coisa principal e mais duas, se couber. O resto espera.",
+      alt: "Página Dia de três coisas do Planner Mente Leve, com a única coisa do dia e o próximo movimento de dois minutos",
+    },
+    {
+      src: "/images/paginas/guia-arrancada.webp",
+      kicker: "Bônus 01 · Guia Explorar o TDAH",
+      title: "Mapa da arrancada",
+      description: "A tarefa adiada vira o primeiro movimento de dois minutos.",
+      alt: "Página Mapa da arrancada do Guia para Explorar o TDAH, com campos para a tarefa e o movimento de dois minutos",
+    },
+    {
+      src: "/images/paginas/mapa-familias.webp",
+      kicker: "Bônus 02 · Mapa das Emoções",
+      title: "Oito famílias",
+      description: "Um nome para o que você está sentindo, antes de virar explosão ou paralisia.",
+      alt: "Página Oito famílias do Mapa das Emoções, com aperto, fogo, peso, névoa, espinho, calor, faísca e muro",
+    },
+    {
+      src: "/images/paginas/casa-cozinha.webp",
+      kicker: "Bônus 03 · Checklist Casa em Ordem",
+      title: "Cozinha",
+      description: "Blocos de 10 a 15 minutos. O timer toca e você para.",
+      alt: "Página Cozinha do Checklist Casa em Ordem, com tarefas curtas de pia, bancada, lixo e chão",
+    },
+    {
+      src: "/images/paginas/bem-estar-semana.webp",
+      kicker: "Bônus 04 · Workbook de Bem-Estar",
+      title: "Plano da semana",
+      description: "Sono, corpo e um limite. Se a semana quebrar, fique com um.",
+      alt: "Página Plano de bem-estar da semana, com três itens e como retomar se a segunda falhar",
+    },
+    {
+      src: "/images/paginas/diario-semana.webp",
+      kicker: "Bônus 05 · Diário de Padrões",
+      title: "Semana 1",
+      description: "Sono, energia e se a tarefa começou. O dia vazio fica vazio.",
+      alt: "Página Semana 1 do Diário de Padrões e Progresso, com a grade de sono, energia e se a tarefa começou",
+    },
+  ],
+} as const;
+
 export const productShowcase = {
   title: "Veja o que você leva para casa.",
   note: "O planner e mais 5 ebooks de bônus.",

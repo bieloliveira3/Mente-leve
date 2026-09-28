@@ -6,10 +6,11 @@ export const sections = {
   pricing: { id: "oferta", name: "A oferta", order: 4 },
   metodo: { id: "metodo", name: "Método de organização", order: 5 },
   bonus: { id: "bonus", name: "Bônus inclusos", order: 6 },
-  criadora: { id: "criadora", name: "Criadora", order: 7 },
-  garantia: { id: "garantia", name: "Garantia", order: 8 },
-  faq: { id: "faq", name: "Antes de decidir", order: 9 },
-  comecar: { id: "cta_final", name: "Convite final", order: 10 },
+  paginas: { id: "paginas", name: "Páginas reais", order: 7 },
+  criadora: { id: "criadora", name: "Criadora", order: 8 },
+  garantia: { id: "garantia", name: "Garantia", order: 9 },
+  faq: { id: "faq", name: "Antes de decidir", order: 10 },
+  comecar: { id: "cta_final", name: "Convite final", order: 11 },
 } as const;
 
 export type SectionKey = keyof typeof sections;

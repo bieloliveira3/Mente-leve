@@ -32,7 +32,7 @@ const expectedCtas = ['hero_offer','pricing_checkout','bonus_checkout','final_ch
     assert.equal((await events()).filter(e=>e.event==='landing_view').length,1);
     const ctas = await page.locator('[data-analytics-id]').evaluateAll(elements=>elements.map(el=>el.dataset.analyticsId));
     assert.deepEqual([...ctas].sort(),[...expectedCtas].sort());
-    assert.equal(await page.locator('[data-analytics-section]').count(),10);
+    assert.equal(await page.locator('[data-analytics-section]').count(),11);
     assert.equal((await events()).filter(e=>e.properties.cta_id==='sticky_checkout').length,0,'Hidden bar must not generate impressions');
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'No horizontal overflow');
 
@@ -64,8 +64,8 @@ const expectedCtas = ['hero_offer','pricing_checkout','bonus_checkout','final_ch
     await page.waitForTimeout(700);
     let captured = await events();
     assert.deepEqual(captured.filter(e=>e.event==='scroll_depth').map(e=>e.properties.percentage).sort((a,b)=>a-b),[25,50,75,90,100]);
-    assert.equal(captured.filter(e=>e.event==='section_view').length,10);
-    assert.equal(new Set(captured.filter(e=>e.event==='section_view').map(e=>e.properties.section_id)).size,10);
+    assert.equal(captured.filter(e=>e.event==='section_view').length,11);
+    assert.equal(new Set(captured.filter(e=>e.event==='section_view').map(e=>e.properties.section_id)).size,11);
 
     // Existing FAQ still works; its interaction remains autocaptured when configured.
     const faq = page.locator('#faq button').first();
@@ -115,7 +115,7 @@ const expectedCtas = ['hero_offer','pricing_checkout','bonus_checkout','final_ch
     await page.reload({waitUntil:'networkidle'});
     assert.equal((await events()).filter(e=>e.event==='landing_view').length,1,'One landing event after reload');
     assert.equal((await events()).find(e=>e.event==='landing_view').properties.utm_content,'ad_01');
-    report.push({device:name,sections:10,ctas:13,milestones:[25,50,75,90,100],checkoutClicks:4,errors,posthogRequests:posthogRequests.length,baseline:!!process.env.ANALYTICS_BASELINE_DIR});
+    report.push({device:name,sections:11,ctas:13,milestones:[25,50,75,90,100],checkoutClicks:4,errors,posthogRequests:posthogRequests.length,baseline:!!process.env.ANALYTICS_BASELINE_DIR});
     console.log(`${name}: all analytics and navigation assertions passed`);
     await context.close();
   }
