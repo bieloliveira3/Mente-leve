@@ -199,34 +199,40 @@ export const bonuses: Bonus[] = [
 ];
 
 export const bonusShowcase = {
-  title: "E você ainda leva 5 bônus para deixar sua rotina mais leve",
+  eyebrow: "E você ainda leva",
+  title: ["5 bônus para deixar", "sua rotina mais leve"],
   subtitle:
     "Além do Planner Mente Leve, você recebe ferramentas práticas para organização, emoções, bem-estar e autoconhecimento.",
   items: [
     {
-      title: "Guia Explorar o TDAH",
+      number: "01",
+      title: ["Guia Explorar", "o TDAH"],
       description: "Entenda melhor seu funcionamento e encontre estratégias para sua rotina.",
-      icon: "brain",
+      icon: "head",
     },
     {
-      title: "Mapa das Emoções",
+      number: "02",
+      title: ["Mapa das", "Emoções"],
       description: "Uma ferramenta visual para identificar e organizar o que você está sentindo.",
       icon: "heart",
     },
     {
-      title: "Checklist Casa em Ordem",
+      number: "03",
+      title: ["Checklist", "Casa em Ordem"],
       description: "Divida as tarefas e tire a organização da casa da cabeça.",
       icon: "home",
     },
     {
-      title: "Workbook de Bem-Estar",
+      number: "04",
+      title: ["Workbook", "de Bem-Estar"],
       description: "Exercícios simples para cuidar de você e da sua rotina.",
-      icon: "leaf",
+      icon: "lotus",
     },
     {
-      title: "Diário Padrões e Progresso",
+      number: "05",
+      title: ["Diário Padrões", "e Progresso"],
       description: "Acompanhe hábitos, perceba padrões e reconheça sua evolução.",
-      icon: "journal",
+      icon: "calendar",
     },
   ],
   closing: "5 ferramentas extras. Um único acesso.",
