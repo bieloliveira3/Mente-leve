@@ -4,7 +4,7 @@
 
 Implementação com `posthog-js@1.434.15`, SDK oficial, PostHog Cloud e MCP oficial para **Codex**, restrito à configuração deste projeto. Nenhum banco, backend de analytics ou dashboard próprio foi criado. O SDK carrega sob demanda e não inicializa sem configuração. O token público foi obtido no onboarding do projeto **632354 (Default project, US Cloud)** e salvo somente em `.env.local`, ignorado pelo Git. Visitas reais à versão de produção local confirmaram **Installation complete** e ingestão de todos os seis eventos customizados, além de pageviews/saída e Web Vitals. Session Replay foi ativado, e uma gravação real foi aberta no player com textos mascarados. A landing publicada na Vercel ainda precisa receber o código e as variáveis em um novo deploy.
 
-O wizard oficial `npx -y @posthog/wizard@latest` foi executado (v2.78.0): detectou Next.js e a dependência PostHog instalada. Não se aplicou uma segunda instalação automática que pudesse sobrescrever a instrumentação específica. O MCP está declarado, mas não está autenticado. A configuração feita inicialmente no Claude Code foi removida após a orientação de usar somente Codex.
+O wizard oficial `npx -y @posthog/wizard@latest` foi executado (v2.78.0): detectou Next.js e a dependência PostHog instalada. Não se aplicou uma segunda instalação automática que pudesse sobrescrever a instrumentação específica. O MCP está declarado e autenticado por OAuth, com acesso somente de leitura restrito ao Default project (632354). A configuração feita inicialmente no Claude Code foi removida após a orientação de usar somente Codex.
 
 ## Análise anterior às alterações
 
@@ -56,6 +56,12 @@ O primeiro valor é o token público real do projeto. O host confirmado para est
 4. Abra a landing publicada, gere eventos e confira **Activity/Live events**, Web Analytics e Session Replay. Veja uma gravação real para confirmar mascaramento. Heatmaps está habilitado no SDK; consulte Heatmaps/Toolbar e autorize o domínio quando solicitado.
 
 Sem token/host, a landing continua funcionando e não envia dados PostHog. A mudança no repositório não equivale a um deploy. Deve-se reconstruir a aplicação após alterar variáveis públicas.
+
+### Publicação pelo proprietário da Vercel
+
+O domínio existente é `https://mente-leve-a5gd.vercel.app/`, projeto `mente-leve-a5gd` da equipe **oliveira-4ba7**, confirmado no status Vercel do GitHub. A conta autenticada nesta tarefa, Thelimaf, tem permissão WRITE no repositório `bieloliveira3/Mente-leve`, mas não acesso a esse projeto Vercel. Por orientação do usuário, a entrega fica na branch `feat/posthog-landing-analytics` e na [PR #1](https://github.com/bieloliveira3/Mente-leve/pull/1), para Biel enviar à `main` com sua conta.
+
+Biel deve configurar o token público e o host acima no ambiente **Production** desse projeto Vercel antes de fazer o merge/deploy. Manter DEBUG e CAPTURE_IN_DEV false. Em seguida, acompanhar o deploy ligado à `main`, abrir o endereço público e validar Activity/Session Replay no projeto 632354. A autenticação MCP do Codex permite consultar PostHog; ela não concede acesso à hospedagem de outra conta. Nenhuma publicação em outro domínio foi criada.
 
 ## Eventos e propriedades
 
@@ -247,9 +253,9 @@ Se a CLI ainda não carregar o projeto confiado, este comando aplica apenas a co
 codex -c 'mcp_servers.posthog.url="https://mcp.posthog.com/mcp"' mcp login posthog
 ```
 
-No navegador, entre na sua conta PostHog, selecione a organização que contém **Default project, ID 632354**, usado no onboarding apresentado nesta tarefa, e autorize. Nas consultas do Codex, indique explicitamente esse projeto. Após OAuth, retorne ao Codex e confirme `/mcp`/a lista de servidores; uma nova sessão pode ser necessária para disponibilizar as ferramentas.
+No navegador, entre na sua conta PostHog, restrinja o acesso em **Projects** ao **Default project, ID 632354**, usado no onboarding apresentado nesta tarefa, com permissões somente de leitura, e autorize. Nas consultas do Codex, indique explicitamente esse projeto. Após OAuth, retorne ao Codex e confirme `/mcp`/a lista de servidores; uma nova sessão pode ser necessária para disponibilizar as ferramentas.
 
-Status: servidor declarado e configuração de transporte verificada; **OAuth do MCP pendente, ferramentas MCP ainda não disponíveis nesta sessão**. O acesso ao painel Cloud no Chrome permitiu verificar a ingestão sem autenticar o MCP. O wizard reconheceu o SDK instalado. Não há instalação remanescente de PostHog no Claude Code feita por esta tarefa.
+Status: servidor declarado e configuração de transporte verificada; **OAuth concluído em 28/09/2026, com auth_status o_auth confirmado na CLI**. O usuário autorizou somente leitura, restrita ao Default project (632354). As ferramentas MCP ainda não foram carregadas nesta sessão; reabra o projeto confiado/recarregue os servidores para disponibilizá-las. O acesso ao painel Cloud no Chrome permitiu verificar a ingestão sem autenticar o MCP. O wizard reconheceu o SDK instalado. Não há instalação remanescente de PostHog no Claude Code feita por esta tarefa.
 
 Perguntas prontas para o Codex conectado:
 
@@ -297,7 +303,7 @@ npm run test:analytics:browser
 
 O teste de navegador requer Playwright. Nesta tarefa foi usado o runtime já incluído no Codex, sem nova dependência do projeto. Para outros ambientes, disponibilize `playwright` e Chrome ou aponte `PLAYWRIGHT_MODULE_PATH` para o módulo já instalado; `PLAYWRIGHT_CHANNEL` escolhe o browser e `ANALYTICS_TEST_URL` a URL local. Inicie next dev com DEBUG=true antes do teste.
 
-Resultados desta tarefa: **10 testes unitários aprovados**, TypeScript/build aprovados, lint sem erros (uma advertência preexistente do img do Meta Pixel, preservado). Os testes verificam também a preservação do token público no envelope de transporte do SDK: removê-lo em before_send impede a ingestão. Testes de browser 1440×900 e 390×844 passaram: todos os marcos/seções/CTAs, FAQ, checkout externo com passthrough, deduplicação, navegação interna/reload, UTMs, zero requisições PostHog no modo local e zero erros de console. Os dados de comparação capturados antes/depois confirmaram igualdade de copy, URLs, classes, retângulos das seções e dimensões da página. No Cloud foram confirmados todos os seis eventos customizados e uma gravação mascarada no player, originados da build local. O código permite heatmaps, mas um mapa visual ainda não foi validado. Consultas MCP dependem de OAuth; a hospedagem pública depende de novo deploy.
+Resultados desta tarefa: **10 testes unitários aprovados**, TypeScript/build aprovados, lint sem erros (uma advertência preexistente do img do Meta Pixel, preservado). Os testes verificam também a preservação do token público no envelope de transporte do SDK: removê-lo em before_send impede a ingestão. Testes de browser 1440×900 e 390×844 passaram: todos os marcos/seções/CTAs, FAQ, checkout externo com passthrough, deduplicação, navegação interna/reload, UTMs, zero requisições PostHog no modo local e zero erros de console. Os dados de comparação capturados antes/depois confirmaram igualdade de copy, URLs, classes, retângulos das seções e dimensões da página. No Cloud foram confirmados todos os seis eventos customizados e uma gravação mascarada no player, originados da build local. O código permite heatmaps, mas um mapa visual ainda não foi validado. OAuth do MCP confirmado; consultas dependem de recarregar os servidores nesta sessão. A hospedagem pública depende de novo deploy pelo proprietário da Vercel.
 
 ## Adicionar eventos/CTAs futuramente
 
@@ -328,6 +334,6 @@ npm run lint
 npm run build
 ```
 
-A tentativa OAuth sem browser terminou sem callback, confirmando a necessidade de autenticação interativa. Nenhuma chave privada foi escrita no código ou commit. Por falta de espaço no C:, as dependências/build estão fisicamente no D:, acessíveis pela pasta de trabalho original do Codex através de uma junction. A estrutura de código/versão do repositório permanece a mesma.
+O OAuth foi concluído em modo interativo e o estado o_auth foi verificado na CLI. A primeira tentativa sem browser não salvou a autenticação; a tentativa interativa posterior concluiu o processo. Nenhuma chave privada foi escrita no código ou commit. Por falta de espaço no C:, as dependências/build estão fisicamente no D:, acessíveis pela pasta de trabalho original do Codex através de uma junction. A estrutura de código/versão do repositório permanece a mesma.
 
 Documentação oficial consultada antes da implementação: [Next.js/PostHog](https://posthog.com/docs/libraries/next-js), [configuração JS](https://posthog.com/docs/libraries/js/config), [privacidade Replay](https://posthog.com/docs/session-replay/privacy), [heatmaps](https://posthog.com/docs/toolbar/heatmaps), [Web Analytics](https://posthog.com/docs/web-analytics), [funis](https://posthog.com/docs/product-analytics/funnels). Também foram lidos os guias da versão instalada do Next.js em `node_modules/next/dist/docs` sobre instrumentation-client, environment variables e usePathname, conforme AGENTS.md.
