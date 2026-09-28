@@ -26,16 +26,16 @@ export function ProductSection() {
       <Image
         src="/images/bonus/planta-topo.png"
         alt=""
-        width={106}
-        height={169}
+        width={105}
+        height={167}
         unoptimized
         className="pointer-events-none absolute top-0 left-0 h-32 w-auto sm:h-36 lg:h-44"
       />
       <Image
         src="/images/bonus/planta-base.png"
         alt=""
-        width={87}
-        height={178}
+        width={85}
+        height={175}
         unoptimized
         className="pointer-events-none absolute right-0 bottom-0 h-32 w-auto sm:h-36 lg:h-44"
       />
