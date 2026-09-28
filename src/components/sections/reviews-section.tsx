@@ -20,7 +20,6 @@ export function ReviewsSection() {
               sizes="(max-width: 640px) 17.5rem, 40vw"
               className="h-auto w-full rounded-[1.75rem] shadow-lg"
             />
-            <p className="mt-3 text-sm leading-relaxed text-foreground">“{item.quote}”</p>
           </li>
         ))}
       </ul>
