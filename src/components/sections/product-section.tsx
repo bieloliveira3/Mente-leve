@@ -61,11 +61,22 @@ function HomeIcon(props: SVGProps<SVGSVGElement>) {
 
 function LotusIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
-      <path d="M12 2.8c1.15 2.5 1.25 5 .15 7.1C11 7.8 10.85 5.3 12 2.8z" />
-      <path d="M12 9.2c-3.3-.3-6.1 1.1-7.2 3.6 2.3-1.1 4.7-1.3 7.2-.7 2.5-.6 4.9-.4 7.2.7-1.1-2.5-3.9-3.9-7.2-3.6z" />
-      <path d="M12 13.2c-4.1.1-7.2 1.8-8.2 4.4 2.8-1.2 5.5-1.4 8.2-.8 2.7-.6 5.4-.4 8.2.8-1-2.6-4.1-4.3-8.2-4.4z" />
-      <path d="M11.15 17.6h1.7V21h-1.7z" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.45"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M12 21.6V14.2" />
+      <ellipse cx="8.15" cy="18.15" rx="3.35" ry="1.28" transform="rotate(-34 8.15 18.15)" />
+      <ellipse cx="15.85" cy="18.15" rx="3.35" ry="1.28" transform="rotate(34 15.85 18.15)" />
+      <ellipse cx="12" cy="9" rx="1.45" ry="4" />
+      <ellipse cx="8.65" cy="10.7" rx="1.35" ry="3.15" transform="rotate(-34 8.65 10.7)" />
+      <ellipse cx="15.35" cy="10.7" rx="1.35" ry="3.15" transform="rotate(34 15.35 10.7)" />
     </svg>
   );
 }
