@@ -22,31 +22,24 @@ export const hero = {
   trustLine: "Pagamento único • Acesso imediato • Garantia de 30 dias",
 };
 
-export const insidePages = {
-  title: "O que você vai receber",
-  note: "Páginas reais do planner, sem data fixa.",
-  pages: [
+export const restart = {
+  title: "Se o último planner parou na primeira semana, o problema não foi você.",
+  note: "O que costuma quebrar é um sistema que trata um dia perdido como fracasso.",
+  points: [
     {
-      src: "/images/planner/pagina-30.webp",
-      title: "Despejo geral",
-      alt: "Página Despejo geral do planner Mente Leve",
+      title: "Um dia perdido não zera tudo",
+      description: "Não há data impressa cobrando o dia que passou. Você continua na próxima página em branco.",
     },
     {
-      src: "/images/planner/pagina-53.webp",
-      title: "Semana comum",
-      alt: "Página Semana comum do planner Mente Leve",
+      title: "O dia pede três coisas",
+      description: "Lista de trinta itens é o que impede de começar. Aqui o combinado é pouco, de propósito.",
     },
     {
-      src: "/images/planner/pagina-62.webp",
-      title: "Dia de três coisas",
-      alt: "Página Dia de três coisas do planner Mente Leve",
-    },
-    {
-      src: "/images/planner/pagina-18.webp",
-      title: "Três resultados, não trinta",
-      alt: "Página Três resultados do planner Mente Leve",
+      title: "Parar já está previsto",
+      description: "Se a semana escapar, você não rasga nada e não recomeça o mês. Você só volta.",
     },
   ],
+  close: "Pagamento único. 30 dias para ver se faz sentido para você.",
 };
 
 export const painPoints = {
