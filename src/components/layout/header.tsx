@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { OfferCountdownBar } from "@/components/offer-countdown-bar";
 import { Button } from "@/components/ui/button";
+import { ctaAttributes } from "@/lib/analytics/definitions";
 
 export function Header() {
   return (
@@ -9,11 +10,11 @@ export function Header() {
       <OfferCountdownBar />
       <header className="border-b border-border/60 bg-background/90 backdrop-blur-sm">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
-          <Link href="/#top" className="inline-flex items-center">
+          <Link {...ctaAttributes("header_home")} href="/#top" className="inline-flex items-center">
             <Logo />
           </Link>
           <Button asChild className="h-8 w-auto rounded-lg px-3 text-sm font-medium">
-            <a href="#pricing">Ver a oferta</a>
+            <a {...ctaAttributes("header_offer")} href="#pricing">Ver a oferta</a>
           </Button>
         </div>
       </header>
