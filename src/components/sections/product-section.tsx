@@ -13,11 +13,11 @@ const display = Fraunces({
 });
 
 const referenceIcons = {
-  head: { src: "/images/bonus/icone-cabeca.png", width: 192, height: 192 },
-  heart: { src: "/images/bonus/icone-coracao.png", width: 192, height: 192 },
-  home: { src: "/images/bonus/icone-casa.png", width: 192, height: 192 },
-  lotus: { src: "/images/bonus/icone-lotus.png", width: 192, height: 192 },
-  calendar: { src: "/images/bonus/icone-calendario.png", width: 192, height: 192 },
+  head: { src: "/images/bonus/icone-cabeca.png", width: 144, height: 144 },
+  heart: { src: "/images/bonus/icone-coracao.png", width: 144, height: 144 },
+  home: { src: "/images/bonus/icone-casa.png", width: 144, height: 144 },
+  lotus: { src: "/images/bonus/icone-lotus.png", width: 144, height: 144 },
+  calendar: { src: "/images/bonus/icone-calendario.png", width: 144, height: 144 },
 } as const;
 
 export function ProductSection() {
