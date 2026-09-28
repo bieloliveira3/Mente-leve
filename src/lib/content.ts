@@ -42,21 +42,25 @@ export const reviews = {
       src: "/images/reviews/camila.webp",
       name: "Camila Rodrigues",
       alt: "Mensagem de Camila Rodrigues no WhatsApp sobre o Mente Leve",
+      quote: "Eu sempre começava e parava. Dessa vez eu consegui voltar sem me sentir culpada.",
     },
     {
       src: "/images/reviews/juliana.webp",
       name: "Juliana Ferreira",
       alt: "Mensagem de Juliana Ferreira no WhatsApp sobre o Mente Leve",
+      quote: "O fato de não ter data me ajudou demais. Eu uso no meu tempo.",
     },
     {
       src: "/images/reviews/mariana.webp",
       name: "Mariana Alves",
       alt: "Mensagem de Mariana Alves no WhatsApp sobre o Mente Leve",
+      quote: "Finalmente algo que não parece uma lista impossível.",
     },
     {
       src: "/images/reviews/larissa.webp",
       name: "Larissa Monteiro",
       alt: "Mensagem de Larissa Monteiro no WhatsApp sobre o Mente Leve",
+      quote: "Eu achei que ia abandonar de novo, mas o planner é simples o suficiente pra eu continuar.",
     },
   ],
 };
@@ -331,6 +335,7 @@ export const pricing = {
   currentPrice: "R$ 27",
   currentPriceCents: "99",
   offerLabel: "Oferta de lançamento",
+  usageLine: "Sem data fixa, poucas coisas por vez. Se o dia sair do eixo, é só voltar.",
   scarcityNote: "Essa condição promocional pode sair do ar a qualquer momento.",
   pageCountNote: "Planner com mais de 150 páginas",
   features: [
@@ -354,7 +359,7 @@ export const pricing = {
 export const guarantee = {
   title: "30 dias para conhecer",
   description:
-    "Você tem 30 dias para conhecer o Mente Leve. Se não fizer sentido para você, utilize as condições de reembolso já previstas na oferta.",
+    "Você tem 30 dias para usar o Mente Leve. Se não fizer sentido, você pede o dinheiro de volta.",
 };
 
 export type FaqItem = {
@@ -395,7 +400,7 @@ export const faqs: FaqItem[] = [
   {
     question: "Existe garantia?",
     answer:
-      "Sim. São 30 dias. Se não fizer sentido, vale o que está na política de reembolso da oferta.",
+      "Sim. São 30 dias para usar. Se não fizer sentido, você pede o dinheiro de volta.",
   },
   {
     question: "O Mente Leve substitui acompanhamento profissional?",

@@ -21,9 +21,6 @@ export function PricingSection() {
               {pricing.currentPrice}
               <span className="align-top text-2xl">,{pricing.currentPriceCents}</span>
             </p>
-            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-              {pricing.offerLabel}
-            </p>
           </div>
           <Image
             src="/images/hero/capa-livro-3.webp"
@@ -32,9 +29,10 @@ export function PricingSection() {
             height={1135}
             quality={92}
             sizes="96px"
-            className="h-auto w-20"
+            className="h-auto w-20 shrink-0"
           />
         </div>
+        <p className="mt-3 text-sm leading-relaxed text-foreground">{pricing.usageLine}</p>
         <ul className="mt-6 space-y-2 border-t border-border pt-5">
           <li className="flex items-start gap-2 text-sm text-foreground">
             <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
@@ -48,7 +46,7 @@ export function PricingSection() {
           ))}
         </ul>
         <p className="mt-5 text-center text-sm text-muted-foreground">
-          Pagamento único · Acesso imediato · Garantia de 30 dias
+          Pagamento único · Acesso imediato · 30 dias para pedir o dinheiro de volta
         </p>
         <CheckoutButton analyticsId="pricing_checkout" className="mt-5 animate-none">{pricing.ctaLabel}</CheckoutButton>
       </div>
