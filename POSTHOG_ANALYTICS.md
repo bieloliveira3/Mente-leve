@@ -88,9 +88,9 @@ Todos os eventos customizados levam `page`, `pathname`, `environment`, `device_t
 | Ordem | section_id | Nome | Âncora existente |
 | --- | --- | --- | --- |
 | 1 | `hero` | Apresentação | `top` |
-| 2 | `oferta` | A oferta | `pricing` |
-| 3 | `identificacao` | Identificação com o problema | `identificacao` |
-| 4 | `mensagens` | Mensagens de quem usa | `mensagens` |
+| 2 | `identificacao` | Identificação com o problema | `identificacao` |
+| 3 | `mensagens` | Mensagens de quem usa | `mensagens` |
+| 4 | `oferta` | A oferta | `pricing` |
 | 5 | `metodo` | Método de organização | `metodo` |
 | 6 | `bonus` | Bônus inclusos | `bonus` |
 | 7 | `criadora` | Criadora | `criadora` |
@@ -178,7 +178,7 @@ Use Web Analytics para pageviews, visitantes anônimos únicos, sessões, fontes
 
 Funil comercial recomendado: `landing_view` → `section_view` com `section_id = oferta` → `cta_impression` com `cta_id = pricing_checkout` → `cta_click` com esse mesmo ID → `checkout_click` com esse mesmo ID. Outro funil usa `cta_final`/`final_checkout`. Configure janela de conversão e usuários ou sessões únicos e mantenha o mesmo `cta_id` nos passos; não misture impressões de um CTA com cliques de outro.
 
-Cobertura de leitura: landing_view e scroll_depth com filtros separados `percentage = 25`, `50`, `75`, `90`, `100`. Para a sequência solicitada `landing → 25 → 50 → 75 → oferta → impressão → clique → checkout`, atenção à estrutura real: **a oferta está na segunda seção, antes de 75%**. Um funil estritamente ordenado nessa ordem descartaria visitantes que viram a oferta cedo e compraram. Use um funil sem ordem estrita para cruzar leitura/exposição, ou separe profundidade de leitura do funil comercial. Não alteramos o layout para forçar essa ordem. Só acrescente purchase depois da integração verificada.
+Cobertura de leitura: landing_view e scroll_depth com filtros separados `percentage = 25`, `50`, `75`, `90`, `100`. Para a sequência solicitada `landing → 25 → 50 → 75 → oferta → impressão → clique → checkout`, atenção à estrutura real: **a oferta fica depois da identificação e das mensagens, antes do método**. Um funil que exige 75% de scroll antes da oferta deixa de fora quem compra ao chegar nela. Use um funil sem ordem estrita para cruzar leitura/exposição, ou separe profundidade de leitura do funil comercial. Não alteramos o layout para forçar essa ordem. Só acrescente purchase depois da integração verificada.
 
 CTR = unidades únicas expostas que clicaram **no mesmo CTA** / unidades únicas expostas, vezes 100. Repetir cliques não aumenta o numerador. Prefira um funil impression → click agrupado pelo mesmo ID, ou a consulta por sessão abaixo, que inclui apenas cliques posteriores à primeira exposição. Para visitantes, substitua a unidade `$session_id` por `distinct_id` nos agrupamentos.
 

@@ -1,9 +1,9 @@
 /** Stable identifiers: independent of copy, CSS classes, and DOM order. */
 export const sections = {
   top: { id: "hero", name: "Apresentação", order: 1 },
-  pricing: { id: "oferta", name: "A oferta", order: 2 },
-  identificacao: { id: "identificacao", name: "Identificação com o problema", order: 3 },
-  mensagens: { id: "mensagens", name: "Mensagens de quem usa", order: 4 },
+  identificacao: { id: "identificacao", name: "Identificação com o problema", order: 2 },
+  mensagens: { id: "mensagens", name: "Mensagens de quem usa", order: 3 },
+  pricing: { id: "oferta", name: "A oferta", order: 4 },
   metodo: { id: "metodo", name: "Método de organização", order: 5 },
   bonus: { id: "bonus", name: "Bônus inclusos", order: 6 },
   criadora: { id: "criadora", name: "Criadora", order: 7 },
