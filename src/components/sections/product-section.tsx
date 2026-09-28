@@ -1,4 +1,5 @@
 import { Fraunces } from "next/font/google";
+import Image from "next/image";
 import type { SVGProps } from "react";
 import { CheckoutButton } from "@/components/checkout-button";
 import { Section } from "@/components/layout/section";
@@ -30,17 +31,6 @@ function Icon({ className, children, ...props }: SVGProps<SVGSVGElement>) {
   );
 }
 
-function HeadIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <Icon strokeWidth={1.5} {...props}>
-      <path d="M14.8 20.2V16.2C14.8 15 16 13.8 15.8 12.2 15.4 9.6 13.2 7.2 10.6 7.6 8.4 8 7 10 7.4 12.2c.2 1 .8 1.8 1.6 2.3" />
-      <path d="M16.6 11.2c.6 1.2.4 2.6-.4 3.6-.6.8-1 1.8-1 2.8v2.6" />
-      <path d="M9.2 11.6c.5.4 1.1.3 1.5-.1" />
-      <path d="M9 20.2h6.2" />
-    </Icon>
-  );
-}
-
 function HeartIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <Icon {...props}>
@@ -59,28 +49,6 @@ function HomeIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function LotusIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.45"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      className={className}
-    >
-      <path d="M12 21.6V14.2" />
-      <ellipse cx="8.15" cy="18.15" rx="3.35" ry="1.28" transform="rotate(-34 8.15 18.15)" />
-      <ellipse cx="15.85" cy="18.15" rx="3.35" ry="1.28" transform="rotate(34 15.85 18.15)" />
-      <ellipse cx="12" cy="9" rx="1.45" ry="4" />
-      <ellipse cx="8.65" cy="10.7" rx="1.35" ry="3.15" transform="rotate(-34 8.65 10.7)" />
-      <ellipse cx="15.35" cy="10.7" rx="1.35" ry="3.15" transform="rotate(34 15.35 10.7)" />
-    </svg>
-  );
-}
-
 function CalendarIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <Icon {...props}>
@@ -92,12 +60,15 @@ function CalendarIcon(props: SVGProps<SVGSVGElement>) {
 }
 
 const icons = {
-  head: HeadIcon,
   heart: HeartIcon,
   home: HomeIcon,
-  lotus: LotusIcon,
   calendar: CalendarIcon,
 };
+
+const referenceIcons = {
+  head: { src: "/images/bonus/icone-cabeca.png", width: 39, height: 40 },
+  lotus: { src: "/images/bonus/icone-lotus.png", width: 40, height: 40 },
+} as const;
 
 function Leaves({ className }: { className?: string }) {
   return (
@@ -119,7 +90,14 @@ export function ProductSection() {
       <Leaves className="pointer-events-none absolute -right-12 -bottom-8 h-40 w-32 rotate-180 text-[#7f967c]/40 sm:-right-6 sm:h-52 sm:w-40 lg:right-0 lg:h-64 lg:w-52" />
 
       <div className="relative mx-auto max-w-2xl text-center">
-        <LotusIcon className="mx-auto h-7 w-7 text-foreground" />
+        <Image
+          src="/images/bonus/marca-lotus.png"
+          alt=""
+          width={26}
+          height={20}
+          unoptimized
+          className="mx-auto h-6 w-auto"
+        />
         <div className="mt-4 flex items-center justify-center gap-3 sm:gap-4">
           <span className="h-px w-8 bg-foreground/25 sm:w-12" />
           <p className="text-[10px] font-medium tracking-[0.22em] text-foreground/75 uppercase sm:text-[11px] sm:tracking-[0.28em]">
@@ -143,7 +121,8 @@ export function ProductSection() {
 
       <ul className="relative mx-auto mt-12 grid max-w-lg grid-cols-1 gap-4 sm:mt-14 lg:mt-16 lg:max-w-none lg:grid-cols-6 lg:gap-5">
         {bonusShowcase.items.map((item, index) => {
-          const ItemIcon = icons[item.icon];
+          const reference = item.icon === "head" || item.icon === "lotus" ? referenceIcons[item.icon] : null;
+          const ItemIcon = item.icon === "head" || item.icon === "lotus" ? null : icons[item.icon];
           return (
             <li
               key={item.number}
@@ -153,9 +132,20 @@ export function ProductSection() {
                 index === 3 && "lg:col-start-2",
               )}
             >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-foreground">
-                <ItemIcon className="h-5 w-5" />
-              </span>
+              {reference ? (
+                <Image
+                  src={reference.src}
+                  alt=""
+                  width={reference.width}
+                  height={reference.height}
+                  unoptimized
+                  className="h-12 w-12"
+                />
+              ) : (
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-foreground">
+                  {ItemIcon ? <ItemIcon className="h-5 w-5" /> : null}
+                </span>
+              )}
               <p className="mt-4 text-[11px] font-medium tracking-[0.22em] text-foreground/55">
                 {item.number}
               </p>
@@ -185,7 +175,14 @@ export function ProductSection() {
         >
           {bonusShowcase.cta} →
         </CheckoutButton>
-        <LotusIcon className="mx-auto mt-8 h-6 w-6 text-foreground/70" />
+        <Image
+          src="/images/bonus/marca-lotus.png"
+          alt=""
+          width={26}
+          height={20}
+          unoptimized
+          className="mx-auto mt-8 h-6 w-auto"
+        />
       </div>
     </Section>
   );
