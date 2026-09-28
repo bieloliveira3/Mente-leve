@@ -3,12 +3,13 @@ export const sections = {
   top: { id: "hero", name: "Apresentação", order: 1 },
   pricing: { id: "oferta", name: "A oferta", order: 2 },
   identificacao: { id: "identificacao", name: "Identificação com o problema", order: 3 },
-  metodo: { id: "metodo", name: "Método de organização", order: 4 },
-  bonus: { id: "bonus", name: "Ebooks de bônus", order: 5 },
-  criadora: { id: "criadora", name: "Criadora", order: 6 },
-  garantia: { id: "garantia", name: "Garantia", order: 7 },
-  faq: { id: "faq", name: "Antes de decidir", order: 8 },
-  comecar: { id: "cta_final", name: "Convite final", order: 9 },
+  mensagens: { id: "mensagens", name: "Mensagens de quem usa", order: 4 },
+  metodo: { id: "metodo", name: "Método de organização", order: 5 },
+  bonus: { id: "bonus", name: "Ebooks de bônus", order: 6 },
+  criadora: { id: "criadora", name: "Criadora", order: 7 },
+  garantia: { id: "garantia", name: "Garantia", order: 8 },
+  faq: { id: "faq", name: "Antes de decidir", order: 9 },
+  comecar: { id: "cta_final", name: "Convite final", order: 10 },
 } as const;
 
 export type SectionKey = keyof typeof sections;

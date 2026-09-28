@@ -90,12 +90,13 @@ Todos os eventos customizados levam `page`, `pathname`, `environment`, `device_t
 | 1 | `hero` | Apresentação | `top` |
 | 2 | `oferta` | A oferta | `pricing` |
 | 3 | `identificacao` | Identificação com o problema | `identificacao` |
-| 4 | `metodo` | Método de organização | `metodo` |
-| 5 | `bonus` | Ebooks de bônus | `bonus` |
-| 6 | `criadora` | Criadora | `criadora` |
-| 7 | `garantia` | Garantia | Sem alteração da âncora/markup existente |
-| 8 | `faq` | Antes de decidir | `faq` |
-| 9 | `cta_final` | Convite final | `comecar` |
+| 4 | `mensagens` | Mensagens de quem usa | `mensagens` |
+| 5 | `metodo` | Método de organização | `metodo` |
+| 6 | `bonus` | Ebooks de bônus | `bonus` |
+| 7 | `criadora` | Criadora | `criadora` |
+| 8 | `garantia` | Garantia | Sem alteração da âncora/markup existente |
+| 9 | `faq` | Antes de decidir | `faq` |
+| 10 | `cta_final` | Convite final | `comecar` |
 
 O wrapper Section obtém dados semânticos do registro central. Seções não renderizadas não geram eventos. A seção conta quando ao menos 100 px ou 25% de sua altura (o menor) ficam na área útil da tela durante 600 ms. Header e barra fixa são descontados. Uma seção conta uma vez por visita; o contexto de saída continua acompanhando a seção atual mesmo ao voltar para cima.
 

@@ -33,6 +33,32 @@ export const painPoints = {
   ],
 };
 
+export const reviews = {
+  title: "Quem está usando, escreveu.",
+  items: [
+    {
+      src: "/images/reviews/camila.webp",
+      name: "Camila Rodrigues",
+      alt: "Mensagem de Camila Rodrigues no WhatsApp sobre o Mente Leve",
+    },
+    {
+      src: "/images/reviews/juliana.webp",
+      name: "Juliana Ferreira",
+      alt: "Mensagem de Juliana Ferreira no WhatsApp sobre o Mente Leve",
+    },
+    {
+      src: "/images/reviews/mariana.webp",
+      name: "Mariana Alves",
+      alt: "Mensagem de Mariana Alves no WhatsApp sobre o Mente Leve",
+    },
+    {
+      src: "/images/reviews/larissa.webp",
+      name: "Larissa Monteiro",
+      alt: "Mensagem de Larissa Monteiro no WhatsApp sobre o Mente Leve",
+    },
+  ],
+};
+
 export const method = {
   title: "Da cabeça cheia para o próximo passo.",
   closing: "Você não precisa ser perfeitamente organizado para conseguir se organizar.",

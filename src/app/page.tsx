@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { PainSection } from "@/components/sections/pain-section";
+import { ReviewsSection } from "@/components/sections/reviews-section";
 import { MethodSection } from "@/components/sections/method-section";
 import { ProductSection } from "@/components/sections/product-section";
 import { CreatorSection } from "@/components/sections/creator-section";
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <PricingSection />
         <PainSection />
+        <ReviewsSection />
         <MethodSection />
         <ProductSection />
         <CreatorSection />
