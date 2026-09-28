@@ -13,6 +13,8 @@ export const brand = {
   supportEmail: "Mentelevecontato@protonmail.com",
 };
 
+export const supportWhatsApp = "https://wa.me/message/5OOUAWJN2Y6OI1";
+
 export const hero = {
   headline: "Sua cabeça está cheia de coisas.",
   headlineAccent: "O Mente Leve transforma esse caos em um caminho claro.",

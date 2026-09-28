@@ -13,7 +13,7 @@ O wizard oficial `npx -y @posthog/wizard@latest` foi executado (v2.78.0): detect
 - Rotas: `/`, `/checkout`, `/termos`, `/privacidade`, `/reembolso`. `/checkout` é uma página de instruções/configuração, **não um checkout real**.
 - Variáveis `NEXT_PUBLIC_*` são incorporadas no frontend durante `next build`; `.env.local` fica na raiz e é ignorado pelo Git.
 - Fonte de copy/oferta: `src/lib/content.ts`. Preço apresentado: **R$ 27,99**, BRL. Destino padrão: `https://pay.cakto.com.br/3am8wy3_1137980`, substituível por `NEXT_PUBLIC_CHECKOUT_URL`.
-- Três links de pagamento usam CheckoutButton: oferta, CTA final, barra fixa. Header e hero navegam para `#pricing`; outros seis links são início, documentos e suporte.
+- Três links de pagamento usam CheckoutButton: oferta, CTA final, barra fixa. Header e hero navegam para `#pricing`; outros links são início, documentos, e-mail de suporte e o botão flutuante do WhatsApp.
 - Meta Pixel existente **1344965854179273**, PageView/InitiateCheckout, foi preservado integralmente. Não foram encontrados GA, GTM, Clarity ou outro tracker no código.
 - A barra fixa já existe e é revelada após o hero; também aparece no desktop. Sua lógica original não foi refatorada.
 - Sem CMP/banner/mecanismo de consentimento. A política de privacidade já menciona cookies e mensuração, mas requer revisão operacional antes de ativar coleta/replay.
@@ -115,8 +115,9 @@ O wrapper Section obtém dados semânticos do registro central. Seções não re
 | `footer_privacy` | `footer` | `footer` | `/privacidade` |
 | `footer_refund` | `footer` | `footer` | `/reembolso` |
 | `footer_support` | `footer` | `footer` | Email existente; analytics registra `mailto:support` |
+| `whatsapp_support` | `flutuante` | `suporte` | WhatsApp de suporte; não é checkout |
 
-As cinco ações comerciais são as duas de oferta e as três de checkout. Os outros seis links têm IDs para análise de navegação. FAQ permanece funcionando e seus controles são cobertos pelo autocapture, sem transformá-los em CTAs de compra.
+As cinco ações comerciais são as duas de oferta e as três de checkout. Os outros links têm IDs para análise de navegação. FAQ permanece funcionando e seus controles são cobertos pelo autocapture, sem transformá-los em CTAs de compra.
 
 Impressão requer **ao menos 50% da área do CTA visível por 600 ms**, aba visível, ausência de `aria-hidden` e verificação de oclusão no ponto central. A barra fixa escondida não conta. Um clique real no CTA visível também confirma exposição se acontecer antes dos 600 ms. Cada ID gera uma impressão por visita, mesmo com vários scrolls. Cliques repetidos são eventos reais, mas CTR deve usar usuários/sessões únicos.
 
