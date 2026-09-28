@@ -59,15 +59,14 @@ function HomeIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function LotusIcon(props: SVGProps<SVGSVGElement>) {
+function LotusIcon({ className }: { className?: string }) {
   return (
-    <Icon strokeWidth={1.5} {...props}>
-      <path d="M12 20V10" />
-      <path d="M12 18c-2.2-1.2-4.2-.2-4.6 2" />
-      <path d="M12 18c2.2-1.2 4.2-.2 4.6 2" />
-      <path d="M12 15c-1.6-2.4-1.2-5 .2-6.4" />
-      <path d="M12 15c1.6-2.4 1.2-5-.2-6.4" />
-    </Icon>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+      <path d="M12 2.8c1.15 2.5 1.25 5 .15 7.1C11 7.8 10.85 5.3 12 2.8z" />
+      <path d="M12 9.2c-3.3-.3-6.1 1.1-7.2 3.6 2.3-1.1 4.7-1.3 7.2-.7 2.5-.6 4.9-.4 7.2.7-1.1-2.5-3.9-3.9-7.2-3.6z" />
+      <path d="M12 13.2c-4.1.1-7.2 1.8-8.2 4.4 2.8-1.2 5.5-1.4 8.2-.8 2.7-.6 5.4-.4 8.2.8-1-2.6-4.1-4.3-8.2-4.4z" />
+      <path d="M11.15 17.6h1.7V21h-1.7z" />
+    </svg>
   );
 }
 
@@ -109,7 +108,7 @@ export function ProductSection() {
       <Leaves className="pointer-events-none absolute -right-12 -bottom-8 h-40 w-32 rotate-180 text-[#7f967c]/40 sm:-right-6 sm:h-52 sm:w-40 lg:right-0 lg:h-64 lg:w-52" />
 
       <div className="relative mx-auto max-w-2xl text-center">
-        <LotusIcon className="mx-auto h-6 w-6 text-foreground" />
+        <LotusIcon className="mx-auto h-7 w-7 text-foreground" />
         <div className="mt-4 flex items-center justify-center gap-3 sm:gap-4">
           <span className="h-px w-8 bg-foreground/25 sm:w-12" />
           <p className="text-[10px] font-medium tracking-[0.22em] text-foreground/75 uppercase sm:text-[11px] sm:tracking-[0.28em]">
@@ -175,7 +174,7 @@ export function ProductSection() {
         >
           {bonusShowcase.cta} →
         </CheckoutButton>
-        <LotusIcon className="mx-auto mt-8 h-5 w-5 text-foreground/60" />
+        <LotusIcon className="mx-auto mt-8 h-6 w-6 text-foreground/70" />
       </div>
     </Section>
   );
