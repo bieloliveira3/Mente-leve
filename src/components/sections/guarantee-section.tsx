@@ -1,6 +1,7 @@
 import { ShieldCheck } from "lucide-react";
 import { Section } from "@/components/layout/section";
-import { guarantee } from "@/lib/content";
+import { CheckoutButton } from "@/components/checkout-button";
+import { guarantee, pricing } from "@/lib/content";
 
 export function GuaranteeSection() {
   return (
@@ -15,6 +16,12 @@ export function GuaranteeSection() {
         <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
           {guarantee.description}
         </p>
+        <CheckoutButton
+          analyticsId="guarantee_checkout"
+          className="h-auto min-h-12 max-w-md animate-none px-6 py-3 text-base font-bold tracking-normal whitespace-normal normal-case sm:min-h-14"
+        >
+          {pricing.ctaLabel}
+        </CheckoutButton>
       </div>
     </Section>
   );

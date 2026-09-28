@@ -13,7 +13,7 @@ O wizard oficial `npx -y @posthog/wizard@latest` foi executado (v2.78.0): detect
 - Rotas: `/`, `/checkout`, `/termos`, `/privacidade`, `/reembolso`. `/checkout` é uma página de instruções/configuração, **não um checkout real**.
 - Variáveis `NEXT_PUBLIC_*` são incorporadas no frontend durante `next build`; `.env.local` fica na raiz e é ignorado pelo Git.
 - Fonte de copy/oferta: `src/lib/content.ts`. Preço apresentado: **R$ 27,99**, BRL. Destino padrão: `https://pay.cakto.com.br/3am8wy3_1137980`, substituível por `NEXT_PUBLIC_CHECKOUT_URL`.
-- Três links de pagamento usam CheckoutButton: oferta, CTA final, barra fixa. O hero navega para `#pricing`. O header abre o WhatsApp de suporte. Os outros links são início, documentos e e-mail.
+- Sete links de pagamento usam CheckoutButton e o mesmo checkout: hero, oferta, bônus, páginas reais, garantia, CTA final e barra fixa. O header abre o WhatsApp de suporte. Os outros links são início, documentos e e-mail.
 - Meta Pixel existente **1344965854179273**, PageView/InitiateCheckout, foi preservado integralmente. Não foram encontrados GA, GTM, Clarity ou outro tracker no código.
 - A barra fixa já existe e é revelada após o hero; também aparece no desktop. Sua lógica original não foi refatorada.
 - Sem CMP/banner/mecanismo de consentimento. A política de privacidade já menciona cookies e mensuração, mas requer revisão operacional antes de ativar coleta/replay.
@@ -75,7 +75,7 @@ Todos os eventos customizados levam `page`, `pathname`, `environment`, `device_t
 | `section_view` | Seção efetivamente exposta por 600 ms | `section_id`, `section_name`, `section_order` |
 | `cta_impression` | CTA efetivamente exposto | `cta_id`, `cta_location`, `cta_text` normalizado, `section_id`, `destination` saneado |
 | `cta_click` | Clique normal, teclado/Enter ou botão central em CTA | Propriedades de impressão, `scroll_percentage_at_click`, `had_impression` |
-| `checkout_click` | Clique em um dos quatro links de pagamento, antes do handler original | Propriedades de clique, `checkout_url` sem query, `product`, `price: 27.99`, `currency: BRL`, UTMs |
+| `checkout_click` | Clique em um dos sete links de pagamento, antes do handler original | Propriedades de clique, `checkout_url` sem query, `product`, `price: 27.99`, `currency: BRL`, UTMs |
 | `$pageleave` | Saída/ocultação detectada pelo SDK | Métricas de scroll do SDK, `max_scroll_percentage`, `last_section_id`, campanha/contexto |
 | `$autocapture` e eventos de UX do SDK | Cliques permitidos/autocapturados | Textos e atributos mascarados; rage/dead clicks habilitados |
 
@@ -94,10 +94,11 @@ Todos os eventos customizados levam `page`, `pathname`, `environment`, `device_t
 | 5 | `metodo` | Método de organização | `metodo` |
 | 6 | `bonus` | Bônus inclusos | `bonus` |
 | 7 | `paginas` | Páginas reais | `paginas` |
-| 8 | `criadora` | Criadora | `criadora` |
-| 9 | `garantia` | Garantia | Sem alteração da âncora/markup existente |
-| 10 | `faq` | Antes de decidir | `faq` |
-| 11 | `cta_final` | Convite final | `comecar` |
+| 8 | `encaixa` | Para quem é e como usar | `encaixa` |
+| 9 | `criadora` | Criadora | `criadora` |
+| 10 | `garantia` | Garantia | Sem âncora própria |
+| 11 | `faq` | Antes de decidir | `faq` |
+| 12 | `cta_final` | Convite final | `comecar` |
 
 O wrapper Section obtém dados semânticos do registro central. Seções não renderizadas não geram eventos. A seção conta quando ao menos 100 px ou 25% de sua altura (o menor) ficam na área útil da tela durante 600 ms. Header e barra fixa são descontados. Uma seção conta uma vez por visita; o contexto de saída continua acompanhando a seção atual mesmo ao voltar para cima.
 
@@ -105,9 +106,11 @@ O wrapper Section obtém dados semânticos do registro central. Seções não re
 
 | cta_id | cta_location | section_id | Destino/função |
 | --- | --- | --- | --- |
-| `hero_offer` | `hero` | `hero` | `#pricing` |
+| `hero_offer` | `hero` | `hero` | Checkout Cakto/configurado |
 | `pricing_checkout` | `oferta` | `oferta` | Checkout Cakto/configurado |
 | `bonus_checkout` | `bonus` | `bonus` | Checkout Cakto/configurado, o mesmo destino do CTA principal |
+| `pages_checkout` | `paginas` | `paginas` | Checkout Cakto/configurado |
+| `guarantee_checkout` | `garantia` | `garantia` | Checkout Cakto/configurado |
 | `final_checkout` | `cta_final` | `cta_final` | Checkout Cakto/configurado |
 | `sticky_checkout` | `barra_fixa` | `sticky_bar` | Checkout Cakto/configurado |
 | `header_home` | `header` | `header` | `/#top` |
@@ -119,7 +122,7 @@ O wrapper Section obtém dados semânticos do registro central. Seções não re
 | `whatsapp_support` | `header` | `header` | WhatsApp de suporte; não é checkout |
 | `reviews_whatsapp` | `mensagens` | `mensagens` | WhatsApp de suporte, abaixo das avaliações; não é checkout |
 
-As ações comerciais são o convite da apresentação e os quatro links de checkout. Os outros links têm IDs para análise de navegação. FAQ permanece funcionando e seus controles são cobertos pelo autocapture, sem transformá-los em CTAs de compra.
+As ações comerciais são os sete links de checkout (hero, oferta, bônus, páginas, garantia, convite final e barra fixa). Os outros links têm IDs para análise de navegação. FAQ permanece funcionando e seus controles são cobertos pelo autocapture, sem transformá-los em CTAs de compra.
 
 Impressão requer **ao menos 50% da área do CTA visível por 600 ms**, aba visível, ausência de `aria-hidden` e verificação de oclusão no ponto central. A barra fixa escondida não conta. Um clique real no CTA visível também confirma exposição se acontecer antes dos 600 ms. Cada ID gera uma impressão por visita, mesmo com vários scrolls. Cliques repetidos são eventos reais, mas CTR deve usar usuários/sessões únicos.
 
@@ -285,8 +288,8 @@ No console, `[analytics]` mostra cada evento e `window.__menteLeveAnalyticsDebug
 | Scroll | Descer até 25/50/75/90/fim, depois repetir | Uma ocorrência de cada marco por visita |
 | Seções | Parar 600 ms em cada seção | section_view com ID/nome/ordem corretos, sem repetição |
 | CTA impression | Expor metade do CTA por 600 ms | Uma impressão; barra escondida não conta |
-| CTA click | Clicar hero | cta_click com ID, âncora e profundidade; navegação intacta. O header abre o WhatsApp |
-| Checkout click | Clicar oferta/bônus/final/barra | cta_click + checkout_click; Cakto abre normalmente com UTMs |
+| CTA click | Clicar hero | cta_click com ID e profundidade; abre o checkout. O header abre o WhatsApp |
+| Checkout click | Clicar hero/oferta/bônus/páginas/garantia/final/barra | cta_click + checkout_click; Cakto abre normalmente com UTMs |
 | Atribuição | Ir para política de privacidade e voltar, depois recarregar | Campanha inicial permanece na mesma sessão |
 | Privacy | Inspecionar eventos e código/configuração | Sem email/senha/CPF/query arbitrária; replay mascarado |
 | Replay real | Usar um projeto de testes com captura ativada | Gravação aparece e pode ser reproduzida no PostHog |

@@ -7,6 +7,7 @@ import { ReviewsSection } from "@/components/sections/reviews-section";
 import { MethodSection } from "@/components/sections/method-section";
 import { ProductSection } from "@/components/sections/product-section";
 import { PagesSection } from "@/components/sections/pages-section";
+import { FitSection } from "@/components/sections/fit-section";
 import { CreatorSection } from "@/components/sections/creator-section";
 import { GuaranteeSection } from "@/components/sections/guarantee-section";
 import { FaqSection } from "@/components/sections/faq-section";
@@ -25,6 +26,7 @@ export default function Home() {
         <MethodSection />
         <ProductSection />
         <PagesSection />
+        <FitSection />
         <CreatorSection />
         <GuaranteeSection />
         <FaqSection />

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Section } from "@/components/layout/section";
-import { realPages } from "@/lib/content";
+import { CheckoutButton } from "@/components/checkout-button";
+import { pricing, realPages } from "@/lib/content";
 
 export function PagesSection() {
   return (
@@ -36,6 +37,11 @@ export function PagesSection() {
           </li>
         ))}
       </ul>
+      <div className="mx-auto mt-8 max-w-md sm:mt-10">
+        <CheckoutButton analyticsId="pages_checkout" className="h-auto min-h-12 animate-none px-6 py-3 text-base font-bold tracking-normal whitespace-normal normal-case sm:min-h-14">
+          {pricing.ctaLabel}
+        </CheckoutButton>
+      </div>
     </Section>
   );
 }

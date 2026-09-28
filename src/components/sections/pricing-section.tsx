@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { CheckoutButton } from "@/components/checkout-button";
-import { bonuses, painPoints, pricing } from "@/lib/content";
+import { offerClarity, packageContents, painPoints, pricing } from "@/lib/content";
 
 export function PricingSection() {
   return (
@@ -33,22 +33,34 @@ export function PricingSection() {
           />
         </div>
         <p className="mt-3 text-sm leading-relaxed text-foreground">{pricing.usageLine}</p>
-        <ul className="mt-6 space-y-2 border-t border-border pt-5">
-          <li className="flex items-start gap-2 text-sm text-foreground">
-            <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
-            {pricing.pageCountNote}
-          </li>
-          {bonuses.map((bonus) => (
-            <li key={bonus.headline} className="flex items-start gap-2 text-sm text-foreground">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
-              {bonus.headline}
-            </li>
-          ))}
-        </ul>
-        <p className="mt-5 text-center text-sm text-muted-foreground">
-          Pagamento único · Acesso imediato · 30 dias para pedir o dinheiro de volta
+        <div className="mt-5 border-t border-border pt-5">
+          <p className="font-heading text-base font-bold leading-snug text-foreground">
+            {packageContents.total}
+          </p>
+          <ul className="mt-3 space-y-2">
+            {packageContents.items.map((item) => (
+              <li key={item.name} className="flex items-baseline justify-between gap-3 text-sm text-foreground">
+                <span className="flex min-w-0 items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+                  <span>{item.name}</span>
+                </span>
+                <span className="shrink-0 tabular-nums text-muted-foreground">{item.pages}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <p className="mt-4 text-sm font-medium leading-relaxed text-foreground">{offerClarity.diagnosis}</p>
+        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{offerClarity.diagnosisNote}</p>
+        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{offerClarity.boundary}</p>
+        <p className="mt-5 text-center text-sm leading-relaxed text-muted-foreground">
+          Pagamento único. {offerClarity.delivery}
         </p>
-        <CheckoutButton analyticsId="pricing_checkout" className="mt-5 animate-none">{pricing.ctaLabel}</CheckoutButton>
+        <p className="mt-1 text-center text-sm text-muted-foreground">
+          30 dias para pedir o dinheiro de volta.
+        </p>
+        <CheckoutButton analyticsId="pricing_checkout" className="mt-5 h-auto min-h-12 animate-none px-6 py-3 text-base font-bold tracking-normal whitespace-normal normal-case sm:min-h-14">
+          {pricing.ctaLabel}
+        </CheckoutButton>
       </div>
     </Section>
   );

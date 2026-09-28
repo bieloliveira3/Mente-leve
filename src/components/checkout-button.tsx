@@ -11,10 +11,12 @@ export function CheckoutButton({
   children,
   className,
   analyticsId,
+  id,
 }: {
   children: React.ReactNode;
   className?: string;
   analyticsId: CtaId;
+  id?: string;
 }) {
   const isExternal = !checkoutBaseUrl.startsWith("/");
 
@@ -29,6 +31,7 @@ export function CheckoutButton({
     >
       <a
         {...ctaAttributes(analyticsId)}
+        id={id}
         data-analytics-checkout="true"
         href={checkoutBaseUrl}
         target={isExternal ? "_blank" : undefined}
@@ -45,7 +48,7 @@ export function CheckoutButton({
           }
         }}
       >
-        <span className="whitespace-nowrap">{children}</span>
+        <span className="min-w-0 text-balance whitespace-normal text-center">{children}</span>
       </a>
     </Button>
   );

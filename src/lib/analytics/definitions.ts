@@ -7,10 +7,11 @@ export const sections = {
   metodo: { id: "metodo", name: "Método de organização", order: 5 },
   bonus: { id: "bonus", name: "Bônus inclusos", order: 6 },
   paginas: { id: "paginas", name: "Páginas reais", order: 7 },
-  criadora: { id: "criadora", name: "Criadora", order: 8 },
-  garantia: { id: "garantia", name: "Garantia", order: 9 },
-  faq: { id: "faq", name: "Antes de decidir", order: 10 },
-  comecar: { id: "cta_final", name: "Convite final", order: 11 },
+  encaixa: { id: "encaixa", name: "Para quem é e como usar", order: 8 },
+  criadora: { id: "criadora", name: "Criadora", order: 9 },
+  garantia: { id: "garantia", name: "Garantia", order: 10 },
+  faq: { id: "faq", name: "Antes de decidir", order: 11 },
+  comecar: { id: "cta_final", name: "Convite final", order: 12 },
 } as const;
 
 export type SectionKey = keyof typeof sections;
@@ -19,6 +20,8 @@ export const ctas = {
   hero_offer: { location: "hero", section: "hero", text: "quero_mente_leve" },
   pricing_checkout: { location: "oferta", section: "oferta", text: "comprar_planner" },
   bonus_checkout: { location: "bonus", section: "bonus", text: "mente_leve_bonus" },
+  pages_checkout: { location: "paginas", section: "paginas", text: "comprar_planner" },
+  guarantee_checkout: { location: "garantia", section: "garantia", text: "comprar_planner" },
   final_checkout: { location: "cta_final", section: "cta_final", text: "comprar_planner" },
   sticky_checkout: { location: "barra_fixa", section: "sticky_bar", text: "garantir_agora" },
   header_home: { location: "header", section: "header", text: "inicio" },

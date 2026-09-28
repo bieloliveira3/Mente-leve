@@ -21,7 +21,8 @@ export const hero = {
   subheadline:
     "Para adultos com TDAH ou dificuldade de foco e rotina, sem mais uma lista impossível.",
   methodLine: "Tire o que está na cabeça, deixe visual e escolha o próximo passo.",
-  cta: "Quero o Mente Leve",
+  priceLine: "R$ 27,99 · 226 páginas em PDF",
+  cta: "Quero meu Mente Leve por R$27,99",
 };
 
 export const painPoints = {
@@ -395,7 +396,7 @@ export const pricing = {
     "Atualizações grátis para sempre",
   ],
   bonusSectionTitle: "Bônus inclusos",
-  ctaLabel: "Quero por R$27,99",
+  ctaLabel: "Quero meu Mente Leve por R$27,99",
   ctaLabelShort: "Garantir agora",
   impactNote: "50% da sua compra vai para instituições de cuidado com TDAH",
   guaranteeNote: "🛡️ Garantia de 30 dias ou seu dinheiro de volta",
@@ -405,9 +406,58 @@ export const pricing = {
 };
 
 export const guarantee = {
-  title: "30 dias para conhecer",
+  title: "30 dias para conhecer o Mente Leve sem risco",
   description:
     "Você tem 30 dias para usar o Mente Leve. Se não fizer sentido, você pede o dinheiro de volta.",
+};
+
+export const packageContents = {
+  total: "226 páginas de conteúdo e ferramentas",
+  items: [
+    { name: "Mente Leve Planner", pages: "158 páginas" },
+    { name: "Guia para Explorar o TDAH", pages: "24 páginas" },
+    { name: "Mapa das Emoções", pages: "18 páginas" },
+    { name: "Checklist da Casa", pages: "6 páginas" },
+    { name: "Workbook de Bem-Estar", pages: "12 páginas" },
+    { name: "Diário de Padrões", pages: "8 páginas" },
+  ],
+};
+
+export const offerClarity = {
+  diagnosis: "Você não precisa ter um diagnóstico de TDAH para usar o Mente Leve.",
+  diagnosisNote:
+    "Foi feito para adultos que se identificam com dificuldade de organização, foco, rotina, excesso de pensamentos e tarefas acumuladas, com ou sem diagnóstico.",
+  boundary: "Não diagnostica, não trata e não substitui acompanhamento profissional.",
+  delivery: "Pagamento aprovado → acesso imediato por e-mail.",
+};
+
+export const fit = {
+  audienceTitle: "Para quem é o Mente Leve?",
+  audience: [
+    "Adultos que têm dificuldade para organizar pensamentos e tarefas.",
+    "Pessoas que começam várias coisas e têm dificuldade para concluir.",
+    "Pessoas que sentem que a rotina fica desorganizada facilmente.",
+    "Quem quer uma forma mais simples e flexível de organizar o dia.",
+    "Pessoas com ou sem diagnóstico de TDAH que se identificam com essas dificuldades.",
+  ],
+  flexibleTitle: "Você não precisa preencher tudo todos os dias.",
+  flexibleText:
+    "Use só o que fizer sentido no dia. Se passar alguns dias, volte quando quiser — sem culpa e sem uma rotina que precise ser perfeita. O Mente Leve não é mais uma obrigação.",
+  usageTitle: "Use do jeito que funcionar melhor para você",
+  usageNote: "A entrega é em PDF.",
+  formats: [
+    { id: "phone", label: "Celular" },
+    { id: "computer", label: "Computador / tablet" },
+    { id: "a4", label: "Impressão A4" },
+    { id: "a5", label: "Impressão A5" },
+  ],
+  notTitle: "O Mente Leve não é",
+  not: [
+    "diagnóstico de TDAH",
+    "tratamento médico ou psicológico",
+    "promessa de cura",
+    "uma rotina rígida que precisa ser seguida perfeitamente",
+  ],
 };
 
 export type FaqItem = {
