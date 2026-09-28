@@ -1,0 +1,5 @@
+# Official hosted PostHog MCP. OAuth credentials stay in the Codex credential store.
+# Project settings are loaded only after trusting this project in Codex.
+[mcp_servers.posthog]
+url = "https://mcp.posthog.com/mcp"
+enabled = true

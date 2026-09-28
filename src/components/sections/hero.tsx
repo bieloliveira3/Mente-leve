@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { hero } from "@/lib/content";
+import { ctaAttributes } from "@/lib/analytics/definitions";
 
 export function Hero() {
   return (
@@ -31,7 +32,7 @@ export function Hero() {
             asChild
             className="mt-5 h-12 w-full max-w-sm rounded-full px-8 text-base font-bold sm:mt-6 sm:h-14 sm:w-auto sm:px-10 sm:text-lg"
           >
-            <a id="hero-cta" href="#pricing">{hero.cta}</a>
+            <a {...ctaAttributes("hero_offer")} id="hero-cta" href="#pricing">{hero.cta}</a>
           </Button>
           <p className="mt-4 text-sm text-muted-foreground">{hero.trustLine}</p>
         </div>
