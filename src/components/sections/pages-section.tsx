@@ -14,7 +14,7 @@ export function PagesSection() {
           {realPages.subtitle}
         </p>
       </div>
-      <ul className="mx-auto mt-8 grid max-w-5xl grid-cols-2 gap-x-3 gap-y-6 sm:mt-10 sm:gap-x-5 sm:gap-y-8 lg:grid-cols-3">
+      <ul className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-x-5 gap-y-8 sm:mt-10 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3">
         {realPages.items.map((item) => (
           <li key={item.src} className="min-w-0">
             <Image
@@ -22,16 +22,17 @@ export function PagesSection() {
               alt={item.alt}
               width={1012}
               height={1432}
-              sizes="(max-width: 1024px) 46vw, 18rem"
+              quality={88}
+              sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 20rem"
               className="h-auto w-full rounded-xl border border-border bg-card shadow-md"
             />
-            <p className="mt-2.5 text-[10px] font-semibold tracking-[0.14em] text-primary uppercase sm:text-[11px]">
+            <p className="mt-3 text-[11px] font-semibold tracking-[0.14em] text-primary uppercase">
               {item.kicker}
             </p>
-            <h3 className="mt-0.5 font-heading text-base font-bold leading-tight text-foreground sm:text-lg">
+            <h3 className="mt-1 font-heading text-lg font-bold leading-tight text-foreground sm:text-xl">
               {item.title}
             </h3>
-            <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
               {item.description}
             </p>
           </li>

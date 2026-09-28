@@ -13,9 +13,12 @@ export function FinalCtaSection() {
         <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-background/75 sm:text-base">
           {finalCta.text}
         </p>
+        <p className="mx-auto mt-6 max-w-md text-sm font-semibold tracking-wide text-background sm:text-base">
+          {finalCta.offerLine}
+        </p>
         <CheckoutButton
           analyticsId="final_checkout"
-          className="mx-auto mt-8 h-auto min-h-12 max-w-md animate-none bg-primary px-6 py-3 text-base font-bold tracking-normal whitespace-normal text-primary-foreground normal-case hover:bg-primary/90 sm:min-h-14"
+          className="mx-auto mt-4 h-auto min-h-12 max-w-md animate-none bg-primary px-6 py-3 text-base font-bold tracking-normal whitespace-normal text-primary-foreground normal-case hover:bg-primary/90 sm:min-h-14"
         >
           {pricing.ctaLabel}
         </CheckoutButton>

@@ -75,51 +75,50 @@ export const method = {
 };
 
 export const realPages = {
-  title: "Veja a folha antes de decidir.",
-  subtitle:
-    "Uma página real do Mente Leve e uma de cada bônus. É o material que chega no seu acesso.",
+  title: "Veja por dentro o que você vai receber.",
+  subtitle: "Veja por dentro: exemplos reais dos materiais que você recebe.",
   items: [
     {
       src: "/images/paginas/planner-dia.webp",
-      kicker: "Planner",
-      title: "Dia de três coisas",
+      kicker: "Página real",
+      title: "Mente Leve Planner",
       description: "Uma coisa principal e mais duas, se couber. O resto espera.",
-      alt: "Página Dia de três coisas do Planner Mente Leve, com a única coisa do dia e o próximo movimento de dois minutos",
+      alt: "Página real do Mente Leve Planner: Dia de três coisas, com a única coisa do dia e o próximo movimento de dois minutos",
     },
     {
       src: "/images/paginas/guia-arrancada.webp",
-      kicker: "Bônus 01",
-      title: "Guia Explorar o TDAH",
+      kicker: "Página real",
+      title: "Guia para Explorar o TDAH",
       description: "Mapa da arrancada: a tarefa adiada vira o primeiro movimento de dois minutos.",
-      alt: "Página Mapa da arrancada do Guia para Explorar o TDAH, com campos para a tarefa e o movimento de dois minutos",
+      alt: "Página real do Guia para Explorar o TDAH: Mapa da arrancada, com campos para a tarefa e o movimento de dois minutos",
     },
     {
       src: "/images/paginas/mapa-familias.webp",
-      kicker: "Bônus 02",
+      kicker: "Página real",
       title: "Mapa das Emoções",
       description: "Oito famílias para nomear o que você sente, antes de virar explosão ou paralisia.",
-      alt: "Página Oito famílias do Mapa das Emoções, com aperto, fogo, peso, névoa, espinho, calor, faísca e muro",
+      alt: "Página real do Mapa das Emoções: oito famílias, com aperto, fogo, peso, névoa, espinho, calor, faísca e muro",
     },
     {
       src: "/images/paginas/casa-cozinha.webp",
-      kicker: "Bônus 03",
-      title: "Casa em Ordem",
+      kicker: "Página real",
+      title: "Checklist da Casa",
       description: "Cozinha em blocos de 10 a 15 minutos. O timer toca e você para.",
-      alt: "Página Cozinha do Checklist Casa em Ordem, com tarefas curtas de pia, bancada, lixo e chão",
+      alt: "Página real do Checklist da Casa: Cozinha, com tarefas curtas de pia, bancada, lixo e chão",
     },
     {
       src: "/images/paginas/bem-estar-semana.webp",
-      kicker: "Bônus 04",
+      kicker: "Página real",
       title: "Workbook de Bem-Estar",
       description: "Plano da semana: sono, corpo e um limite. Se quebrar, fique com um.",
-      alt: "Página Plano de bem-estar da semana, com três itens e como retomar se a segunda falhar",
+      alt: "Página real do Workbook de Bem-Estar: plano da semana, com três itens e como retomar se a segunda falhar",
     },
     {
       src: "/images/paginas/diario-semana.webp",
-      kicker: "Bônus 05",
+      kicker: "Página real",
       title: "Diário de Padrões",
       description: "Semana 1: sono, energia e se a tarefa começou. O dia vazio fica vazio.",
-      alt: "Página Semana 1 do Diário de Padrões e Progresso, com a grade de sono, energia e se a tarefa começou",
+      alt: "Página real do Diário de Padrões: Semana 1, com a grade de sono, energia e se a tarefa começou",
     },
   ],
 } as const;
@@ -153,6 +152,7 @@ export const finalCta = {
   title: "Menos caos na cabeça.",
   titleAccent: "Mais clareza para o próximo passo.",
   text: "Um planner para usar no seu ritmo.",
+  offerLine: "Planner + 5 bônus · 226 páginas · R$27,99",
 };
 
 export const scienceSection = {
@@ -386,7 +386,7 @@ export const pricing = {
   usageLine:
     "Tire da cabeça, deixe visual e escolha pouco. Sem data fixa: se o dia sair do eixo, é só voltar.",
   scarcityNote: "Essa condição promocional pode sair do ar a qualquer momento.",
-  pageCountNote: "Planner com mais de 150 páginas",
+  pageCountNote: "Planner Mente Leve — 158 páginas",
   features: [
     "Acesse e preencha de onde quiser: celular, tablet ou computador",
     "Planner em PDF, pronto para imprimir",
@@ -414,7 +414,7 @@ export const guarantee = {
 export const packageContents = {
   total: "226 páginas de conteúdo e ferramentas",
   items: [
-    { name: "Mente Leve Planner", pages: "158 páginas" },
+    { name: "Planner Mente Leve", pages: "158 páginas" },
     { name: "Guia para Explorar o TDAH", pages: "24 páginas" },
     { name: "Mapa das Emoções", pages: "18 páginas" },
     { name: "Checklist da Casa", pages: "6 páginas" },
