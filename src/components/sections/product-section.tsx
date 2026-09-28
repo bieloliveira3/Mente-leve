@@ -22,25 +22,8 @@ const referenceIcons = {
 
 export function ProductSection() {
   return (
-    <Section id="bonus" className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-24">
-      <Image
-        src="/images/bonus/planta-topo.png"
-        alt=""
-        width={105}
-        height={167}
-        unoptimized
-        className="pointer-events-none absolute top-0 left-0 h-32 w-auto sm:h-36 lg:h-44"
-      />
-      <Image
-        src="/images/bonus/planta-base.png"
-        alt=""
-        width={85}
-        height={175}
-        unoptimized
-        className="pointer-events-none absolute right-0 bottom-0 h-32 w-auto sm:h-36 lg:h-44"
-      />
-
-      <div className="relative mx-auto max-w-2xl text-center">
+    <Section id="bonus" className="bg-background py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-2xl text-center">
         <Image
           src="/images/bonus/marca-lotus.png"
           alt=""
